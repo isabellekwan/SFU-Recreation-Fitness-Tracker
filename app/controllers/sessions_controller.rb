@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         else
 
             message = "Username or password is incorrect. Try again or sign up!"
-            redirect_to login_path, notice message
+            redirect_to login_path, notice: message
         end
     end
 end
