@@ -57,6 +57,7 @@ class ExerciseTable < ActiveRecord::Migration[7.0]
   create_table "exercises" do |t|
     t.string "name"
     t.text "description"
+    t.text "standards"
     t.string "category"
     t.string "equipment_needed"
     t.string "url"
