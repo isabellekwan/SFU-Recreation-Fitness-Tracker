@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'sessions#home'
+  root 'static_pages#home'
 
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
 
