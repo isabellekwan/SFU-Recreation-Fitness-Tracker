@@ -56,18 +56,41 @@ exercise.create(
     url: "",
 )
 
-# FEMALE SQUATS
+#Beginner Squats
 exercise.create(
-    name: "Squats",
-    description: "Bodyweight exercise that shapes legs and butt",
-    standards: "Beginner: 0.50x bodyweight \nNovice: 0.75x bodyweight \nIntermediate: 1.25x bodyweight
-                \nAdvanced: 1.50x bodyweight \nElite: 2.00x bodyweight \n",
+    name: "Smith Squats",
+    description:"",
+    standards: "",
+    key_points:"",
     category: "Strength",
-    equipment_needed: "Barbell weight",
+    targets: "",
+    equipment_needed: "Smith Machine",
     url: "",
 )
 
+#Intermediate Squats
+exercise.create(
+    name: "Squat Rack",
+    description:"",
+    standards: "",
+    key_points:"",
+    category: "Strength",
+    targets: "",
+    equipment_needed: "Squat rack",
+    url: "",
+)
 
+#Advanced Squats
+exercise.create(
+    name: "Split Squats",
+    description:"",
+    standards: "",
+    key_points:"",
+    category: "Strength",
+    targets: "",
+    equipment_needed: "Dumbells",
+    url: "",    
+)
 
 # FEMALE SHOULDER PRESS
 exercise.create(
