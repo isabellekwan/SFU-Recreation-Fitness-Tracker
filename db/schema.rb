@@ -53,27 +53,16 @@ end
 
 
 # database for exercise information
-class FemaleExerciseTable < ActiveRecord::Migration[7.0]
-  create_table "F_exercises" do |t|
+class ExerciseTable < ActiveRecord::Migration[7.0]
+  create_table "exercises" do |t|
     t.string "name"
+    t.text "set_up"
     t.text "description"
+    t.text "key_points"
     t.text "standards"
     t.string "category"
     t.string "equipment_needed"
-    t.string "url"
-    t.timestamps
-  end
-end
-
-
-# database for exercise information
-class MaleExerciseTable < ActiveRecord::Migration[7.0]
-  create_table "M_exercises" do |t|
-    t.string "name"
-    t.text "description"
-    t.text "standards"
-    t.string "category"
-    t.string "equipment_needed"
+    t.string "targets"
     t.string "url"
     t.timestamps
   end
