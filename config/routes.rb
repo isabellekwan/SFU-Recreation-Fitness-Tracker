@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'sessions#home'
+  root 'static_pages#home'
 
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
 
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
+  get '/about',  to: 'about#index'
+  get '/new_user', to: 'users#new'
 end
