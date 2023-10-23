@@ -95,11 +95,11 @@ exercise.create(
     Your knees should be at a 90-degree angle.
     4. Push through your heels and extend your knees and hips to return to the starting position.
     5. Repeats for desired number of repetitons. Then, lock the barbell back into the safety catches by rotation the hooks or levers.",
-    key_points:"1. Keep your back straight.\n
-    2. Track your knees over your toes: try not to let them go past the tips of your toes.\n
-    3. Keep your heels planted firmly on the ground and knees lined up with the feet.\n
-    4. Look straight ahead.\n
-    5. Start with lighter weights.",
+    key_points:"- Keep your back straight.\n
+    - Track your knees over your toes: try not to let them go past the tips of your toes.\n
+    - Keep your heels planted firmly on the ground and knees lined up with the feet.\n
+    - Look straight ahead.\n
+    - Start with lighter weights.",
     standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
@@ -126,9 +126,9 @@ exercise.create(
     4. Push through your heels and extend your knees and hips to return to the starting position.\n
     5. Repeat for desired number of repetitions. 
     Once the set is complete, carefull step forward to rack the bar by placing it back on the safety pins.",
-    key_points:"1. Maintain a controlled and steady pace throughout the exercise.\n
-    2. Keep your core engaged and back straight.\n
-    3. Don't let your knees fall inwards - keep them directly above your toes.",
+    key_points:"- Maintain a controlled and steady pace throughout the exercise.\n
+    - Keep your core engaged and back straight.\n
+    - Don't let your knees fall inwards; keep them directly above your toes.",
     standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
@@ -150,35 +150,76 @@ exercise.create(
     Your back knee should hover just above the ground.\n
     3. Push through the heel of your front foot and extend your knee to return to the starting position.\n
     4. Repeat for desired number of repetitions. Then, switch to the other leg to complete the set.",
-    key_points:"1. Engage your core to maintain a stable and upright posture.\n
-    2. Keep your chest up and your back straight throughout the exercise.\n
-    3. Try to keep your front knee from extending past your toes.",
+    key_points:"- Engage your core to maintain a stable and upright posture.\n
+    - Keep your chest up and your back straight throughout the exercise.\n
+    - Try to keep your front knee from extending past your toes.",
     standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
     equipment_needed: "Elevated surface (about knee height), optional: dumbbells",
     url: "",    
 )
-
-# FEMALE SHOULDER PRESS
+ 
+# Lateral Raise
 exercise.create(
-    name: "Dumbbell Shoulder Press",
-    description: "Weight exercise that builds muscle in shoulders, upper back, and arms",
-    standards: "Beginner: 0.10x bodyweight \nNovice: 0.15x bodyweight \nIntermediate: 0.25x bodyweight 
-                \nAdvanced: 0.35x bodyweight \nElite: 0.50x bodyweight \n",
+    name: "Lateral Raise",
+    set_up: "Stand up straight with your feet shoulder-width apart. 
+    Hold a dumbbell in each hand by your sides with your palms facing your body.",
+    description: "1. With a slight bend in your elbows, engage your core and keep your back straight.\n
+    2. While maintaining a straight posture, lift the dumbbells out to the sides, away from your body. 
+    Keep your arms extended and your palms facing the ground as you do this.\n
+    3. Raise your arms until they are parallel to the ground or slightly below shoulder level. 
+    Your body should form a 'T' shape at the top of the movement.\n
+    4. Lower the dumbbells back down to your sides in a controlled manner, maintaining a slight bend in your elbows throughout.\n
+    5. Repeat for desired number of repetitions.",
+    key_points: "- Avoid using momentum to lift the dumbbells. 
+    If they are too heavy, switch to a lighter weight.\n
+    - Avoid arching your back.\n
+    - Do not lift dumbbells above shoulder level.\n
+    - Choose weights that ensure proper form; lateral raises are typically done with lighter weights compared to other shoulder exercises.",
     category: "Strength",
-    equipment_needed: "Barbell or dumbbell",
+    targets: "Shoulder: Lateral deltoid",
+    equipment_needed: "Dumbbells",
     url: "",
 )
 
-
-# FEMALE BENCH PRESS
+# Arnold Press
 exercise.create(
-    name: "Dumbbell Bench Press",
-    description: "Weight exercise that builds muscle in chest, shoulder, and arms",
-    standards: "Beginner: 0.10x bodyweight \nNovice: 0.20x bodyweight \nIntermediate: 0.30x bodyweight 
-                \nAdvanced: 0.50x bodyweight \nElite: 0.70x bodyweight \n",
+    name: "Arnold Press",
+    set_up: "1. Sit on a chair or bench with a dumbbell in each hand.\n
+    2. Position the dumbbells infront of your shoulders, with your palms facing you and elbows close to the body.",
+    description: "1. Press the dumbbels upward. Rotate your wrists as you do this so that your palms face away from you at the top of the movement.\n
+    3. Lower the dumbbells back to the starting position. Rotate your palms again as you go down.\n
+    3. Repeat for desired number of repititions.",
+    key_points: "- Exhale on the way up and inhale on the way down.\n
+    - Keep your back straight.",
     category: "Strength",
-    equipment_needed: "Barbell or dumbbell",
+    targets: "Shoulder: Anterior deltoid",
+    equipment_needed: "Bench/chair, dumbbells",
     url: "",
 )
+
+# Supported rear fly raise
+exercise.create(
+    name: "Supported Delt Fly",
+    set_up: "1. Adjust bench to about a 45 degree angle; 
+    just high enough so that your hands do not reach the floor when you are laying on it.
+    2. Grab dumbbells in each hand.
+    3. Lay your chest down at the top end of the bench.
+    Your head should be off the bench and your arms should be hanging below you with you palms facing each other.",
+    description: "1. With a slight bend in the elbows, begin to raise your arms up & outwards until they are in line with your torso.\n
+    2. Pause slightly at the top of the movement, then slowly lower your arms back to the starting position.",
+    key_points: "- Focus on keeping your back neutral (do not curve spine).\n
+    - Keep elbows slightly bent, not too much. Don't have them fully extended either.\n
+    - Use a weight that allows proper form; nothing too heavy.",
+    category: "",
+    Targets: "Shoulder: Posterior deltoid",
+    equipment_needed: "Bench, dumbbells",
+    url: "",
+)
+
+# needed: chest (chest press, chest fly - need 2 because pushups count as chest), 
+# abs (3), hamstrings (deadlift, hamstring curl), calves (one exercise for calves?), 
+# glutes (hip thrust, slight variation to split squats),
+# back, triceps, biceps (bicep curl, hammer curl, 45 degree curl)
+
