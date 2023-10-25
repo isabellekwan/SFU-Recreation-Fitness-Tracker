@@ -1,25 +1,34 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>SFU Fitness App</title>
-  <style>
-      /* Inline CSS styles */
-      h1 {
-          color: #572424;
-      }
-
-      p {
-          font-size: 16px;
-      }
-  </style>
+  <%= stylesheet_link_tag "style.css" %>
 </head>
 <body>
+  <div class="navbar">
+  <a href="home.html.erb">SFU Fitness App</a>
+  <a href="home.html.erb">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Explore
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+</div>
 <header>
-  <h1>SFU Fitness App</h1>
+  <pre>Fitness Made<br>For You</pre>
 </header>
-<section class="main-content">
-  <p>This is the default home page for your app.</p>
+<div id="circle">
+  <%= image_tag "woman-working-out.png", class: "home_girl" %>
+</div>
+<section>
+  <p>Tracking your fitness progress at SFU! All exercises and activities suggested <br> 
+  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
 </footer>
 </body>
 </html>
