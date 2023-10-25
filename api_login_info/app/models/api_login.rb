@@ -1,2 +1,0 @@
-class ApiLogin < ApplicationRecord
-end
