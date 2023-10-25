@@ -102,8 +102,16 @@ body {
     margin-top: -18vw;
     margin-right: 1vw;
     float:right;
-    background: white;
     border-radius: 50%;
-    width: 35vw;
-    height: 35vw;
+    /* background: white;
+    box-shadow: 0 0 5px 10px #fff; */
+    width: 30vw;
+    height: 30vw;
+}
+
+.home_girl {
+    margin-top: -4vw;
+    margin-right: -2vw;
+    float: right;
+    width: 45vw;
 }
