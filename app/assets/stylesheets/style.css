@@ -97,3 +97,13 @@ body {
     margin-left: 5vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+#circle {
+    margin-top: -18vw;
+    margin-right: 1vw;
+    float:right;
+    background: white;
+    border-radius: 50%;
+    width: 35vw;
+    height: 35vw;
+}
