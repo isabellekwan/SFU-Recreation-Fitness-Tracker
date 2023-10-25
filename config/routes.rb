@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
-  get 'static_pages/help'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -15,6 +14,10 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
-  get '/about',  to: 'about#index'
+  get '/home', to: 'static_pages#home'
+  get '/about',  to: 'static_pages#about'
+  get '/exercises', to: 'exercises#workouts'
+  get '/equipment', to: 'exercises#equipment'
+  get '/reviews', to: 'exercises#reviews'
   get '/new_user', to: 'users#new'
 end
