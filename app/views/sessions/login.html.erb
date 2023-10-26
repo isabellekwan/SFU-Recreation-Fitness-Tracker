@@ -1,28 +1,33 @@
 <body>
-<div class="navbar">
+ <div class="navbar">
+    <div class="navbar-group">
       <div class="logo">
-    <%= image_tag "SFU_logo.png", class: "logo" %>
-    <p class="logo">Fitness App</p>
-  </div>
-    <div class="dropdown">
-      <button class="dropbtn">Explore
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <%= link_to 'Exercises', exercises_path %>
-        <%= link_to 'Equipment', equipment_path %>
-        <%= link_to 'Reviews', reviews_path %>
+        <%= image_tag "SFU_logo.png", class: "logo" %>
+        <p class="logo">Fitness App</p>
       </div>
-    <%= link_to 'About', about_path, class: "nav" %>
-    <%= link_to 'Home', home_path, class: "nav" %>
+    </div>
+    <div class="navbar-group">
+      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'About', about_path, class: "nav" %>
+      <div class="dropdown">
+        <button class="dropbtn">Explore</button>
+        <div class="dropdown-content">
+          <%= link_to 'Exercises', exercises_path %>
+          <%= link_to 'Equipment', equipment_path %>
+          <%= link_to 'Reviews', reviews_path %>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+  <div class="navbar-spacing"></div>
   <div class="loginblock">
-    <h2>Log In</2>
+    <%= image_tag "sfu-rec.png", class: "login_logo" %>
+    <h2 class="login">Log In</h2>
     <%= form_tag '/login' do %>
-        Username: <%= text_field_tag :username %><br>
-        Password: <%= password_field_tag :password %><br>
+        Username: <%= text_field_tag :username %><br><br>
+        Password: <%= password_field_tag :password %><br><br>
         <%= submit_tag "Log In" %>
     <% end %>
-</div>
+    <br>
+    <%= link_to 'Not signed up? Register now!', register_path %>
 </body>
