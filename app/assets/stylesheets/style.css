@@ -233,3 +233,61 @@ h2.login {
 .loginfill {
     border-radius: 1vw;
 }
+
+h1.schedule {
+    font-family:fantasy;
+    font-weight: 10;
+}
+
+p.schedule {
+    margin-top: -1vw;
+    font-size: 1.1vw;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vw;
+    width: 100%;
+    height: 30vw;
+}
+
+th {
+    background-color: #a6192e;
+    padding: 2vw;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+}
+
+td {
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2vw;
+    padding: 2vw;
+
+}
+
+th:first-of-type {
+    border-top-left-radius: 20px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 20px;
+  }
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 20px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 20px;
+  }th:first-of-type {
+    border-top-left-radius: 20px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 20px;
+  }
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 20px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 20px;
+  }
