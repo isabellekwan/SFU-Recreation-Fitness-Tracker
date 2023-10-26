@@ -20,11 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_05_183212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-end
 
-# users add to their workout history
-class CreateWorkouts < ActiveRecord::Migration[7.0]
-  create_table "workout" do |t|
+  create_table "workout", force: :cascade do |t|
     t.references "user", foreign_key: true
     t.string "name"
     t.date "date"
@@ -33,12 +30,8 @@ class CreateWorkouts < ActiveRecord::Migration[7.0]
     t.datetime "date_updated", null: false
     t.timestamps
   end
-end
 
-
-# database for exercise information
-class ExerciseTable < ActiveRecord::Migration[7.0]
-  create_table "exercise" do |t|
+  create_table "exercise", force: :cascade do |t|
     t.string "name"
     t.text "set_up"
     t.text "description"
@@ -48,30 +41,19 @@ class ExerciseTable < ActiveRecord::Migration[7.0]
     t.string "equipment_needed"
     t.string "targets"
     t.string "url"
-    t.timestamps
   end
-end
 
-
-# users add exercises to their workout history
-class CreateWorkoutExercise < ActiveRecord::Migration[7.0]
-  create_table "workout_exercise" do |t|
+  create_table "workout_exercise", force: :cascade do |t|
     t.references "workout", foreign_key: true #foreign key to workouts
     t.references "exercise", foreign_key: true
     t.integer "sets"
     t.integer "reps"
     t.float "weight"
     t.string "weight_unit"
-    t.string "weight_unit"
     t.integer "duration"
-    t.timestamps
   end
-end
 
-
-# adding progress
-class CreateProgress < ActiveRecord::Migration[7.0]
-  create_table "progress" do |t|
+  create_table "progress", force: :cascade do |t|
     t.references "user", foreign_key: true
     t.references "exercise", foreign_key: true
     t.date "date"
@@ -79,4 +61,6 @@ class CreateProgress < ActiveRecord::Migration[7.0]
     t.integer "duration_complete"
     t.timestamps
   end
+
 end
+
