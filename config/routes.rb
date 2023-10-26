@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/about',  to: 'static_pages#about'
   get '/exercises', to: 'exercises#workouts'
   get '/equipment', to: 'exercises#equipment'
-  get '/reviews', to: 'exercises#reviews'
+  get '/schedule', to: 'exercises#schedule'
   get '/new_user', to: 'users#new'
 end
