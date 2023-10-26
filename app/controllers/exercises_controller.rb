@@ -5,6 +5,6 @@ class ExercisesController < ApplicationController
     def equipment
     end
 
-    def reviews
+    def schedule
     end
 end
