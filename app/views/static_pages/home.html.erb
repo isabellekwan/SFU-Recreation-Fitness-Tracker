@@ -7,21 +7,27 @@
 </head>
 <body>
   <div class="navbar">
-    <%= image_tag "SFU_logo.png", class: "logo" %>
-    <%= link_to 'Fitness App', home_path %>
-    <%= link_to 'Home', home_path %>
-    <%= link_to 'About', about_path %>
-  <div class="dropdown">
-    <button class="dropbtn">Explore
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <%= link_to 'Exercises', exercises_path %>
-      <%= link_to 'Equipment', equipment_path %>
-      <%= link_to 'Reviews', reviews_path %>
+    <div class="navbar-group">
+      <div class="logo">
+        <%= image_tag "SFU_logo.png", class: "logo" %>
+        <p class="logo">Fitness App</p>
+      </div>
+    </div>
+    <div class="navbar-group">
+      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'About', about_path, class: "nav" %>
+      <div class="dropdown">
+        <button class="dropbtn">Explore</button>
+        <div class="dropdown-content">
+          <%= link_to 'Exercises', exercises_path %>
+          <%= link_to 'Equipment', equipment_path %>
+          <%= link_to 'Reviews', reviews_path %>
+        </div>
+      </div>
+      <%= link_to 'Login', login_path, class: "buttonnav" %>
     </div>
   </div>
-  </div>
+  <div class="navbar-spacing"></div>
 <header>
   <pre>Fitness Made<br>For You</pre>
 </header>
@@ -31,6 +37,7 @@
 <section>
   <p class="home">Tracking your fitness progress at SFU! All exercises and activities suggested <br> 
   can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
-</footer>
+</section>
+<%= link_to 'Sign Up Now!', login_path, class: "button" %>
 </body>
 </html>

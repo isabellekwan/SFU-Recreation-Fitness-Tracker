@@ -1,4 +1,23 @@
-<div>
+<body>
+<div class="navbar">
+      <div class="logo">
+    <%= image_tag "SFU_logo.png", class: "logo" %>
+    <p class="logo">Fitness App</p>
+  </div>
+    <div class="dropdown">
+      <button class="dropbtn">Explore
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <%= link_to 'Exercises', exercises_path %>
+        <%= link_to 'Equipment', equipment_path %>
+        <%= link_to 'Reviews', reviews_path %>
+      </div>
+    <%= link_to 'About', about_path, class: "nav" %>
+    <%= link_to 'Home', home_path, class: "nav" %>
+  </div>
+  </div>
+  <div class="loginblock">
     <h2>Log In</2>
     <%= form_tag '/login' do %>
         Username: <%= text_field_tag :username %><br>
@@ -6,3 +25,4 @@
         <%= submit_tag "Log In" %>
     <% end %>
 </div>
+</body>
