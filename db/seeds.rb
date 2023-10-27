@@ -18,11 +18,11 @@ Exercise.create(
 
     description: 
     "1. Lower your chest towards the elevated surface by bending your elbows. 
-    Keep your body in a straight line as you descend. <br>
+    Keep your body in a straight line as you descend. \n
     2. Continue lowering yourself until your chest is close to the elevated surface or as far down as your strength allows.
-    Your elbows should form about a 45-degree angle with your body.<br>
-    3. Pause briefly at the bottom of the movement while maintaining a straight body line.<br>
-    4. Push yourself back up to the starting position by straightening your arms, engaging your chest, shoulders, and triceps.<br>
+    Your elbows should form about a 45-degree angle with your body.\n
+    3. Pause briefly at the bottom of the movement while maintaining a straight body line. \n
+    4. Push yourself back up to the starting position by straightening your arms, engaging your chest, shoulders, and triceps. \n
     5. Repeat the exercise for the desired number of repetitions.",
 
     key_points: 
