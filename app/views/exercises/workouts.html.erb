@@ -1,1 +1,71 @@
-<h1>Workouts<h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <style>
+    .grid-container {
+      display: grid;
+      column-gap: 10px;
+      row-gap: 10px;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      color: black;
+    }
+    p {
+    color: #0b0b0b;
+    font-size: 1.5vw;
+    text-align: left;
+    }
+  
+    </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-group">
+      <div class="logo">
+        <%= image_tag "SFU_logo.png", class: "logo" %>
+        <p class="logo">Fitness App</p>
+      </div>
+    </div>
+    <div class="navbar-group">
+      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'About', about_path, class: "nav" %>
+      <div class="dropdown">
+        <button class="dropbtn">Explore</button>
+        <div class="dropdown-content">
+          <%= link_to 'Exercises', exercises_path %>
+          <%= link_to 'Equipment', equipment_path %>
+          <%= link_to 'Schedule', schedule_path %>
+        </div>
+      </div>
+      <%= link_to 'Login', login_path, class: "buttonnav" %>
+    </div>
+  </div>
+  <div class="navbar-spacing"></div>
+<section class="about">
+  <h1>Exercises</h1>
+  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
+  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
+  <div class="grid-container">
+    <% @exercises.each do |exercise| %>
+      <div class="grid-item">
+        <h2><%= exercise.name %></h2>
+        <p><strong>Category:</strong> <%= exercise.category %></p>
+        <p><strong>Targets:</strong> <%= exercise.targets %></p>
+        <p><strong>Description:</strong> <%= exercise.description %></p>
+      </div>
+    <% end %>
+</div>
+</section>
+</footer>
+</body>
+</html>

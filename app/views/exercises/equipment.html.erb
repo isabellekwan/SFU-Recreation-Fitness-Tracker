@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <%= stylesheet_link_tag "style.css" %>
+</head>
 <body>
- <div class="navbar">
+    <div class="navbar">
     <div class="navbar-group">
       <div class="logo">
         <%= image_tag "SFU_logo.png", class: "logo" %>
@@ -17,17 +24,15 @@
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
+      <%= link_to 'Login', login_path, class: "buttonnav" %>
     </div>
   </div>
   <div class="navbar-spacing"></div>
-  <div class="loginblock">
-    <%= image_tag "sfu-rec.png", class: "login_logo" %>
-    <h2 class="login">Log In</h2>
-    <%= form_tag '/login' do %>
-        Username: <%= text_field_tag :username %><br><br>
-        Password: <%= password_field_tag :password %><br><br>
-        <%= submit_tag "Log In" %>
-    <% end %>
-    <br>
-    <%= link_to 'Not signed up? Register now!', register_path %>
+<section class="about">
+  <h1>Equipment</h1>
+  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
+  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
+</section>
+</footer>
 </body>
+</html>
