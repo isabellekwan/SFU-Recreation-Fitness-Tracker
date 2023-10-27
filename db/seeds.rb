@@ -6,28 +6,31 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require schema
-
 # BEGINNER PUSHUPS
-exercise.create(
+Exercise.create(
     name: "Incline Push Ups",
-    set_up: "1. Find a stable surface or object that is elevated and can support your body.\n
+    set_up: 
+    "1. Find a stable surface or object that is elevated and can support your body.\n
     2. Place your hands slightly wider than shoulder-width apart on the elevated surface, palms flat and fingers pointing forward.\n
     3. Step your feet back to create a plank position, having your body form a straight line from head to heels.
     Keep core engaged to main a stable posture.\n
     4. Your shoulders should be directly above your hands and your arms should be extended.",
-    description: "1. Lower your chest towards the elevated surface by bending your elbows. 
-    Keep your body in a straight line as you descend.\n
+
+    description: 
+    "1. Lower your chest towards the elevated surface by bending your elbows. 
+    Keep your body in a straight line as you descend. <br>
     2. Continue lowering yourself until your chest is close to the elevated surface or as far down as your strength allows.
-    Your elbows should form about a 45-degree angle with your body. \n
-    3. Pause briefly at the bottom of the movement while maintaining a straight body line.
-    4. Push yourself back up to the starting position by straightening your arms, engaging your chest, shoulders, and triceps.\n
+    Your elbows should form about a 45-degree angle with your body.<br>
+    3. Pause briefly at the bottom of the movement while maintaining a straight body line.<br>
+    4. Push yourself back up to the starting position by straightening your arms, engaging your chest, shoulders, and triceps.<br>
     5. Repeat the exercise for the desired number of repetitions.",
-    key_points: "- To keep proper form, maintain a straight line from head to heels throughout the exercise.\n
+
+    key_points: 
+    "- To keep proper form, maintain a straight line from head to heels throughout the exercise.\n
     - Keep your core engaged to stabilize your body.\n
     - Adjust the height of the elevated surface to make the exercise more or less challenging.
     A higher surface decreases the difficulty, while a lower surface increases the difficulty.",
-    standards: "",
+
     category: "Strength",
     targets: "triceps, pectoral muscles, shoulders",
     equipment_needed: "A stable surface or object that is elevated and can support your bodyweight.",
@@ -35,7 +38,7 @@ exercise.create(
 )
 
 # INTERMEDIATE PUSHUPS
-exercise.create(
+Exercise.create(
     name: "Push Ups",
     set_up: "1. Start by getting into a plank position: Place your hands on the floor, slightly wider than shoulder-width apart. 
     Your shoulders should be directly above your hands and your arms should be fullu extended.
@@ -49,7 +52,6 @@ exercise.create(
     key_points: "- Keep your core muscles engaged to stabilize your body.\n
     - Inhale as you lower your body and exhale as you push yourself back up.\n
     - If you find regular pushups too challenging, you can modify them by doing knee pushups, incline pushups, or wall pushups to build strength gradually.",
-    standards: "",
     category: "Strength",
     targets: "triceps, pectoral muscles, shoulders",
     equipment_needed: "Optional: a mat",
@@ -57,7 +59,7 @@ exercise.create(
 )
 
 # ADVANCED PUSHUPS
-exercise.create(
+Exercise.create(
     name: "Decline Push Ups",
     set_up: "1. Find a stable elevated surface like a bench, a step, a low wall, or a piece of gym equipment. This surface should be strong and secure to support your body weight.\n
     2. Get into a pushup position with your hands on the floor, slightly wider than shoulder-width apart, palms flat, and fingers pointing forward.\n
@@ -72,7 +74,6 @@ exercise.create(
     - Inhale as you lower your body and exhale as you push yourself back up.\n
     - You can adjust the difficulty of the push ups by adjusting the height of the object.
     Placing your feet on a higher surface makes it more difficult while a lower surface makes it easier.",
-    standards: "",
     category: "Strength",
     targets: "triceps, pectoral muscles, shoulders",
     equipment_needed: "A stable object/surface that can support your body weight.",
@@ -81,7 +82,7 @@ exercise.create(
 
 
 # Beginner Squats
-exercise.create(
+Exercise.create(
     name: "Smith Squats",
     set_up: "1. Stand inside the Smith machine with the barbell on your upper back/shoulders.
     The bar should be positioned slightly below neck level.\n
@@ -100,7 +101,6 @@ exercise.create(
     - Keep your heels planted firmly on the ground and knees lined up with the feet.\n
     - Look straight ahead.\n
     - Start with lighter weights.",
-    standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
     equipment_needed: "Smith Machine",
@@ -108,7 +108,7 @@ exercise.create(
 )
 
 # Intermediate Squats
-exercise.create(
+Exercise.create(
     name: "Barbell Squats",
     set_up: "1. Place the barbell on the safety pins of the squat rack at an appropriate height for your body. 
     The bar should be set slightly below shoulder level when you're standing.\n
@@ -129,7 +129,6 @@ exercise.create(
     key_points:"- Maintain a controlled and steady pace throughout the exercise.\n
     - Keep your core engaged and back straight.\n
     - Don't let your knees fall inwards; keep them directly above your toes.",
-    standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
     equipment_needed: "Squat rack / barbell",
@@ -137,7 +136,7 @@ exercise.create(
 )
 
 # Advanced Squats
-exercise.create(
+Exercise.create(
     name: "Bulgarian Split Squats",
     set_up: "1. Stand a couple of feet in front of a bench or a sturdy platform.
     You can hold dumbbells in each hand for added resistance.\n
@@ -153,7 +152,6 @@ exercise.create(
     key_points:"- Engage your core to maintain a stable and upright posture.\n
     - Keep your chest up and your back straight throughout the exercise.\n
     - Try to keep your front knee from extending past your toes.",
-    standards: "",
     category: "Strength",
     targets: "Quadriceps, hamstrings, glutes",
     equipment_needed: "Elevated surface (about knee height), optional: dumbbells",
@@ -161,7 +159,7 @@ exercise.create(
 )
  
 # Lateral Raise
-exercise.create(
+Exercise.create(
     name: "Lateral Raise",
     set_up: "Stand up straight with your feet shoulder-width apart. 
     Hold a dumbbell in each hand by your sides with your palms facing your body.",
@@ -184,7 +182,7 @@ exercise.create(
 )
 
 # Arnold Press
-exercise.create(
+Exercise.create(
     name: "Arnold Press",
     set_up: "1. Sit on a chair or bench with a dumbbell in each hand.\n
     2. Position the dumbbells infront of your shoulders, with your palms facing you and elbows close to the body.",
@@ -200,7 +198,7 @@ exercise.create(
 )
 
 # Supported rear fly raise
-exercise.create(
+Exercise.create(
     name: "Supported Delt Fly",
     set_up: "1. Adjust bench to about a 45 degree angle; 
     just high enough so that your hands do not reach the floor when you are laying on it.
@@ -213,7 +211,7 @@ exercise.create(
     - Keep elbows slightly bent, not too much. Don't have them fully extended either.\n
     - Use a weight that allows proper form; nothing too heavy.",
     category: "",
-    Targets: "Shoulder: Posterior deltoid",
+    targets: "Shoulder: Posterior deltoid",
     equipment_needed: "Bench, dumbbells",
     url: "",
 )
