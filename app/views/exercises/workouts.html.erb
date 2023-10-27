@@ -9,7 +9,7 @@
       display: grid;
       column-gap: 10px;
       row-gap: 10px;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       padding: 10px;
     }
     .grid-item {
@@ -19,6 +19,15 @@
       font-size: 20px;
       text-align: center;
       color: black;
+      cursor: pointer;
+    }
+    .item-content {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s;
+    }
+    .expanded {
+      height: auto;
     }
     p {
     color: #0b0b0b;
@@ -52,20 +61,38 @@
   </div>
   <div class="navbar-spacing"></div>
 <section class="about">
+
   <h1>Exercises</h1>
   <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
   can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
+
   <div class="grid-container">
     <% @exercises.each do |exercise| %>
       <div class="grid-item">
         <h2><%= exercise.name %></h2>
         <p><strong>Category:</strong> <%= exercise.category %></p>
         <p><strong>Targets:</strong> <%= exercise.targets %></p>
-        <p><strong>Description:</strong> <%= exercise.description %></p>
+        <p><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
+        <div class="item-content">
+          <p><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+        </div>
       </div>
     <% end %>
-</div>
+  </div>
 </section>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(function (gridItem) {
+      gridItem.addEventListener("click", function () {
+        const itemContent = gridItem.querySelector(".item-content");
+        itemContent.classList.toggle("expanded");
+      });
+    });
+  });
+</script>
 </body>
 </html>
