@@ -7,17 +7,25 @@
   <style>
     .grid-container {
       display: grid;
+      column-gap: 10px;
+      row-gap: 10px;
       grid-template-columns: auto auto auto;
-      background-color: #000000;
       padding: 10px;
     }
     .grid-item {
       background-color: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(0, 0, 0, 0.8);
-      padding: 100px;
-      font-size: 30px;
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      font-size: 20px;
       text-align: center;
+      color: black;
     }
+    p {
+    color: #0b0b0b;
+    font-size: 1.5vw;
+    text-align: left;
+    }
+  
     </style>
 </head>
 <body>
@@ -48,18 +56,15 @@
   <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
   can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
   <div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>
+    <% @exercises.each do |exercise| %>
+      <div class="grid-item">
+        <h2><%= exercise.name %></h2>
+        <p><strong>Category:</strong> <%= exercise.category %></p>
+        <p><strong>Targets:</strong> <%= exercise.targets %></p>
+        <p><strong>Description:</strong> <%= exercise.description %></p>
+      </div>
+    <% end %>
 </div>
-
-  </ul>
 </section>
 </footer>
 </body>
