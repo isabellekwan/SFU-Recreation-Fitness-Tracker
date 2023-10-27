@@ -270,24 +270,24 @@ td {
 
 th:first-of-type {
     border-top-left-radius: 20px;
-  }
-  th:last-of-type {
+}
+th:last-of-type {
     border-top-right-radius: 20px;
-  }
-  tr:last-of-type td:first-of-type {
+}
+tr:last-of-type td:first-of-type {
     border-bottom-left-radius: 20px;
-  }
-  tr:last-of-type td:last-of-type {
+}
+tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 20px;
-  }th:first-of-type {
+}th:first-of-type {
     border-top-left-radius: 20px;
-  }
-  th:last-of-type {
+}
+th:last-of-type {
     border-top-right-radius: 20px;
-  }
-  tr:last-of-type td:first-of-type {
+}
+tr:last-of-type td:first-of-type {
     border-bottom-left-radius: 20px;
-  }
-  tr:last-of-type td:last-of-type {
+}
+tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 20px;
-  }
+}
