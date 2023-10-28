@@ -20,6 +20,11 @@
     </div>
   </div>
   <div class="navbar-spacing"></div>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>  
   <div class="loginblock">
     <%= image_tag "sfu-rec.png", class: "login_logo" %>
     <h2 class="login">Log In</h2>
