@@ -78,17 +78,6 @@ p {
     width: 45vw;
 }
 
-.buttonnav {
-    margin-left: 3vw;
-    font-size: 2vw;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 1vw;
-    padding: 0.75vw 1.5vw 0.75vw 1.5vw;
-    margin-right: 16px;
-    text-decoration: none;
-    background-color: white;
-    color: rgb(117, 25, 25);
-}
 
 .button {
     margin-left: 5vw;
