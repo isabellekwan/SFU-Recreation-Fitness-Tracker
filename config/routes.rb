@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
   get '/new_user', to: 'users#new'
+
+  #for the logged in , "sessions view"
+  
+
 end
