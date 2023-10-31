@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About</title>
+  <title>SFU Fitness App</title>
   <%= stylesheet_link_tag "style.css" %>
-  <%= stylesheet_link_tag "navbar-out.css" %>
+  <%= stylesheet_link_tag "navbar-in.css" %>
+
 </head>
 <body>
-    <div class="navbar">
+  <div class="navbar">
     <div class="navbar-group">
       <div class="logo">
         <%= image_tag "SFU_logo.png", class: "logo" %>
@@ -29,11 +30,15 @@
     </div>
   </div>
   <div class="navbar-spacing"></div>
-<section class="about">
-  <h1>Equipment</h1>
-  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
+<header>
+  <pre>Fitness Made<br>For You</pre>
+</header>
+<div id="circle">
+  <%= image_tag "woman-working-out.png", class: "home_girl" %>
+</div>
+<section>
+  <p class="home">Tracking your fitness progress at SFU! All exercises and activities suggested <br> 
   can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
 </section>
-</footer>
 </body>
 </html>

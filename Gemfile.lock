@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actioncable (7.0.8)
       actionpack (= 7.0.8)
@@ -190,6 +190,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.6-x64-mingw-ucrt)
+    sqlite3 (1.6.6-x86_64-linux)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
