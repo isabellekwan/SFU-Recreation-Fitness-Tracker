@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
+  get '/home', to: 'sessions#home'
+  get '/account', to: 'sessions#account'
+
   get '/home', to: 'static_pages#home'
   get '/about',  to: 'static_pages#about'
   get '/exercises', to: 'exercises#workouts'
@@ -23,6 +26,6 @@ Rails.application.routes.draw do
   get '/new_user', to: 'users#new'
 
   #for the logged in , "sessions view"
-  
+
 
 end
