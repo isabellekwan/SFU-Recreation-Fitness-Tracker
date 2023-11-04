@@ -22,14 +22,14 @@
   <div class="navbar-spacing"></div>
   <div class="loginblock">
     <%= image_tag "sfu-rec.png", class: "login_logo" %>
-    <h2 class="login">Register</h2>
+    <h2 class="login">WORKING Register</h2>
     <%= form_for @user do |f| %>
         <%= f.label :username %>
         <%= f.text_field :username %><br>
         <%= f.label :password %>
         <%= f.password_field :password %><br>
-        <%= f.submit "WORKING Register" %>
+        <%= f.submit "Register" %>
     <% end %>
     <br>
-    <%= link_to 'Not signed up? Register now!', register_path %>
+    <%= link_to 'Already have an account? Log in here!', login_path %>
 </body>
