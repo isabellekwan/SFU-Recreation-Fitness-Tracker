@@ -1,9 +1,35 @@
-<h1>Create New Account</h1>
-
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
-    <%= f.submit "Create Account" %>
-<% end %>
+<body>
+ <div class="navbar">
+    <div class="navbar-group">
+      <div class="logo">
+        <%= image_tag "SFU_logo.png", class: "logo" %>
+        <p class="logo">Fitness App</p>
+      </div>
+    </div>
+    <div class="navbar-group">
+      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'About', about_path, class: "nav" %>
+      <div class="dropdown">
+        <button class="dropbtn">Explore</button>
+        <div class="dropdown-content">
+          <%= link_to 'Exercises', exercises_path %>
+          <%= link_to 'Equipment', equipment_path %>
+          <%= link_to 'Schedule', schedule_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-spacing"></div>
+  <div class="loginblock">
+    <%= image_tag "sfu-rec.png", class: "login_logo" %>
+    <h2 class="login">Log In</h2>
+    <%= form_for @user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
+        <%= f.submit "Create Account" %>
+    <% end %>
+    <br>
+    <%= link_to 'Not signed up? Register now!', register_path %>
+</body>
