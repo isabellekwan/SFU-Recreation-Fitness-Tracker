@@ -5,134 +5,16 @@
   <title>About</title>
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
-
+  <%= stylesheet_link_tag "about.css" %>
+<%
+=begin%>
+ 
   <style>
-    body {
-      font-family: Verdana, sans-serif;
-    }
+    placed all the previous css to about.css
 
-    .mySlides {
-      display: none;
-    }
-
-    img {
-      vertical-align: middle;
-    }
-
-    /* Slideshow container */
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-
-    /* Caption text */
-    .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Number text (1/3 etc) */
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
-
-    /* The dots/bullets/indicators */
-    .dot {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 5s ease;
-    }
-
-    .active {
-      background-color: #FFFFFF;
-    }
-
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: .4;
-      } 
-      to {
-        opacity: 1;
-      }
-    }
-
-    .about {
-      text-align: center;
-      padding: 50px;
-    }
-
-    .about h1 {
-      color: #333;
-    }
-
-    .about p {
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    .about-slideshow {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .about-slideshow img {
-      width: 100%;
-      height: auto;
-    }
-
-    h3 em {
-      color: #008080;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    footer {
-      background-color: #f2f2f2;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .navbar-spacing {
-      height: 50px; /* Adjust the height as needed */
-    }
-
-    .standard-image-size {
-    width: 800px; /* Adjust the width as needed */
-    height: 600px; /* Adjust the height as needed */
-    object-fit: cover; 
-  }
-      .dot {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-  </style>
+  </style> 
+<%
+=end%>
 </head>
 <body>
   <div class="navbar">
@@ -170,8 +52,6 @@
       those who want to strength train, and hard-core gym rats.
     </p>
 
-    <!-- Slideshow of the equipment available in the gym -->
-    <!-- Slideshow of the equipment available in the gym -->
     <div class="slideshow-container">
       <div class="mySlides fade">
         <%= image_tag 'barbell-h.jpg', alt: 'barbells', class: 'standard-image-size' %>
