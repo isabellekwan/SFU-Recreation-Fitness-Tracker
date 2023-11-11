@@ -117,6 +117,13 @@
     .navbar-spacing {
       height: 50px; /* Adjust the height as needed */
     }
+
+    .standard-image-size {
+    width: 800px; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    object-fit: cover; 
+  }
+
   </style>
 </head>
 <body>
@@ -156,70 +163,63 @@
     </p>
 
     <!-- Slideshow of the equipment available in the gym -->
+    <!-- Slideshow of the equipment available in the gym -->
     <div class="slideshow-container-about-slideshow">
       <div class="mySlides fade">
-        <%= image_tag 'barbell-h.jpg', alt: 'barbells' %>
+        <%= image_tag 'barbell-h.jpg', alt: 'barbells', class: 'standard-image-size' %>
       </div>
 
       <div class="mySlides fade">
-        <%= image_tag 'bench-and-weights-h.jpg', alt: 'bench and weight' %>
+        <%= image_tag 'bench-and-weights-h.jpg', alt: 'bench and weight', class: 'standard-image-size' %>
       </div>
 
       <div class="mySlides fade">
-        <%= image_tag 'benchpress-h.jpg', alt: 'benchpress' %>
+        <%= image_tag 'benchpress-h.jpg', alt: 'benchpress', class: 'standard-image-size' %>
       </div>
 
       <div class="mySlides fade">
-        <%= image_tag 'free-weights-2-h.jpg', alt: 'free weights' %>
+        <%= image_tag 'free-weights-2-h.jpg', alt: 'free weights', class: 'standard-image-size' %>
       </div>
-<!-- Slideshow of the equipment available in the gym -->
-  <div class="slideshow-container-about-slideshow">
-    <div class="mySlides fade">
-      <%= image_tag 'barbell-h.jpg', alt: 'barbells' %>
-    </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'bench-and-weights-h.jpg', alt: 'bench and weight' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'free-weights-and-mats-h.jpg', alt: 'free weights and mats section of gym', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'free-weights-and-mats-h.jpg', alt: 'free weights and mats section of gym' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'free-weights-h.jpg', alt: 'free weights', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'free-weights-h.jpg', alt: 'free weights' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'hanging-bar-h.jpg', alt: 'hanging bar', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'hanging-bar-h.jpg', alt: 'hanging bar' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'jog-machine-h.jpg', alt: 'jog machine', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'jog-machine-h.jpg', alt: 'jog machine' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'leg-extension-h.jpg', alt: 'leg extension', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'leg-extension-h.jpg', alt: 'leg extension' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'leg-press-h.jpg', alt: 'leg press', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'leg-press-h.jpg', alt: 'leg press' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'pull-up-h.jpg', alt: 'pull up', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'pull-up-h.jpg', alt: 'pull up' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'sitting-rows-h.jpg', alt: 'sitting rows', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'sitting-rows-h.jpg', alt: 'sitting rows' %>
-    </div>
+      <div class="mySlides fade">
+        <%= image_tag 'smith-machine-h.jpg', alt: 'smith machine', class: 'standard-image-size' %>
+      </div>
 
-    <div class="mySlides fade">
-      <%= image_tag 'smith-machine-h.jpg', alt: 'smith machine' %>
-    </div>
-
-    <div class="mySlides fade">
-      <%= image_tag 'upstairs-free-space-h.jpg', alt: 'upstairs free space' %>
+      <div class="mySlides fade">
+        <%= image_tag 'upstairs-free-space-h.jpg', alt: 'upstairs free space', class: 'standard-image-size' %>
+      </div>
     </div>
   </div>
 
