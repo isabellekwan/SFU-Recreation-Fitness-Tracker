@@ -21,7 +21,8 @@ body {
   }
   
   /* Caption text */
-  .text {
+  .text,
+  .numbertext {
     color: white;
     font-size: 15px;
     padding: 8px 12px;
@@ -29,15 +30,6 @@ body {
     bottom: 8px;
     width: 100%;
     text-align: center;
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: white;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
   }
   
   /* The dots/bullets/indicators */
@@ -75,13 +67,11 @@ body {
     padding: 50px;
   }
   
-  .about h1 {
-    color: #333;
-  }
-  
-  .about p {
-    color: #666;
-    margin-bottom: 20px;
+  .about h1,
+  .about p,
+  h3 em,
+  h1 {
+    color: white;
   }
   
   .about-slideshow {
@@ -92,14 +82,6 @@ body {
   .about-slideshow img {
     width: 100%;
     height: auto;
-  }
-  
-  h3 em {
-    color: #008080;
-  }
-  
-  h1 {
-    color: #333;
   }
   
   .navbar-spacing {
