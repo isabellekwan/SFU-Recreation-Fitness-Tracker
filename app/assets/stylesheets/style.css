@@ -211,3 +211,13 @@ li.equipment:hover section.hoverlist {
 section.hoverlist p {
     color:black;
 }
+
+.images{
+    width: 28vw;
+    height: 20vw;
+}
+
+.treadmill{
+    height: 28vw;
+    width: 25vw;
+}
