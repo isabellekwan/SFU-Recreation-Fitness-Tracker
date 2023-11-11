@@ -14,8 +14,8 @@
       padding: 10px;
     }
     .grid-item {
-      background-color: white;
-      border: 2px solid black;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
       padding: 10px;
       font-size: 20px;
       text-align: center;
@@ -34,6 +34,47 @@
     color: #0b0b0b;
     font-size: 1.5vw;
     text-align: left;
+    }
+        .search-bar {
+      margin-bottom: 20px;
+    }
+  
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display:none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    .dropdown-content input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+  
+    .dropdown-content option {
+      padding: 8px;
+      display: block;
+      cursor: pointer;
+    }
+    .dropdown-content option:hover {
+      background-color: #f1f1f1;
+    }
+    .show {
+      display: block;
     }
   
     </style>
@@ -57,13 +98,34 @@
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
-      <%= link_to 'Login', login_path, class: "buttonnav" %>
+      <% if logged_in? %>
+        <%= link_to "Account", account_path, class: "buttonnav" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "buttonnav" %>
+      <% end %>
     </div>
   </div>
   <div class="navbar-spacing"></div>
 <section class="about">
 
+    <div class="search-bar">
+    <div class="dropdown">
+      <button onclick="toggleDropdown()" class="dropbtn">Select Muscle</button>
+      <div id="muscleDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="muscleInput" onkeyup="filterMuscles()">
+        <option value="Triceps">Triceps</option>
+        <option value="Pectoral">Pectoral Muscles</option>
+        <option value="Shoulder">Shoulder Muscles</option>
+        <option value="Quadriceps">Quadriceps</option>
+        <option value="Hamstrings">Hamstrings</option>
+        <option value="Glutes">Glutes</option>
+      </div>
+    </div>
+  </div>
+
   <h1>Exercises</h1>
+  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
+  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
 
   <div class="grid-container">
     <% @exercises.each do |exercise| %>
@@ -92,6 +154,19 @@
       });
     });
   });
+
+    function filterMuscles() {
+    const gridItems = document.querySelectorAll(".grid-item");
+    const input = document.getElementById("muscleInput").value.toUpperCase();
+    gridItems.forEach(function (gridItem) {
+      const targets = gridItem.dataset.targets.toUpperCase();
+      if (targets.includes(input) || input == "") {
+        gridItem.style.display = "grid";
+      } else {
+        gridItem.style.display = "none";
+      }
+    });
+  }
 </script>
 </body>
 </html>
