@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "navbar.css" %>
+
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 5s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4;
+      } 
+      to {
+        opacity: 1;
+      }
+    }
+
+    .about {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .about h1 {
+      color: #333;
+    }
+
+    .about p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .about-slideshow {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about-slideshow img {
+      width: 100%;
+      height: auto;
+    }
+
+    h3 em {
+      color: #008080;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .navbar-spacing {
+      height: 50px; /* Adjust the height as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-group">
+      <div class="logo">
+        <%= image_tag "SFU_logo.png", class: "logo" %>
+        <p class="logo">Fitness App</p>
+      </div>
+    </div>
+    <div class="navbar-group">
+      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'About', about_path, class: "nav" %>
+      <div class="dropdown">
+        <button class="dropbtn">Explore</button>
+        <div class="dropdown-content">
+          <%= link_to 'Exercises', exercises_path %>
+          <%= link_to 'Equipment', equipment_path %>
+          <%= link_to 'Schedule', schedule_path %>
+        </div>
+      </div>
+      <%= link_to 'Login', login_path, class: "buttonnav" %>
+    </div>
+  </div>
+  <div class="navbar-spacing"></div>
+
+  <section class="about">
+    <h1>About</h1>
+    <p>
+      Track your fitness progress at SFU! All exercises and activities suggested 
+      can be completed at the SFU Recreation Centre on SFU's Burnaby Campus.
+    </p>
+
+    <p> 
+      The exercises we have designed are inclusive to all. Perfect for beginners, 
+      those who want to strength train, and hard-core gym rats.
+    </p>
+
+    <!-- Slideshow of the equipment available in the gym -->
+    <div class="slideshow-container about-slideshow">
+      <div class="mySlides fade">
+        <img src="barbell h.jpg" alt="barbells">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="bench and weights h.jpg" alt="bench and weight">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="benchpress h.jpg" alt="benchpress">
+      </div>
+            <div class="mySlides fade">
+        <img src="free weights 2 h.jpg" alt="free weights">
+      </div>
+            <div class="mySlides fade">
+        <img src="free weights and mats h.jpg" alt="free weights and mats section of gym">
+      </div>
+            <div class="mySlides fade">
+        <img src="free weights h.jpg" alt="free weights">
+      </div>
+            <div class="mySlides fade">
+        <img src="hanging bar h.jpg" alt="hanging bar">
+      </div>
+            <div class="mySlides fade">
+        <img src="jog machine h.jpg" alt="jog machine">
+      </div>
+            <div class="mySlides fade">
+        <img src="leg extension h.jpg" alt="leg extension">
+      </div>
+            <div class="mySlides fade">
+        <img src="leg press h.jpg" alt="leg press">
+      </div>
+            <div class="mySlides fade">
+        <img src="pull up h.jpg" alt="pull up">
+      </div>
+            <div class="mySlides fade">
+        <img src="sitting rows h.jpg" alt="sitting rows">
+      </div>
+            <div class="mySlides fade">
+        <img src="smith machine h.jpg" alt="smith machine">
+      </div>
+            <div class="mySlides fade">
+        <img src="upstairs free space h.jpg" alt="upstairs free space">
+      </div>
+    </div>
+
+    <h3><em>Become the stronger version of yourself, TODAY!</em></h3>
+
+    <h1>Where to find us</h1>
+    <p>
+      The SFU Recreation Center is located on the west side of the campus near the Tim Horton's.
+      It is within the Lorne Davies Complex by the track field. 
+    </p>
+    <!-- Insert an image below here and perhaps a video -->
+    <video width="680" height="480" controls>
+    <source src="walk to the gym.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <footer>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 3200); // Change image every 3.2 seconds
+    }
+  </script>
+</body>
+</html>

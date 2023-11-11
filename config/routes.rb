@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/account', to: 'sessions#account'
 
   get '/home', to: 'static_pages#home'
-  get '/about',  to: 'static_pages#about'
+  get '/about',  to: 'static_pages#aboutC'
   get '/exercises', to: 'exercises#workouts'
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
