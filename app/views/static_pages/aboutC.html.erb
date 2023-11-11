@@ -123,6 +123,14 @@
     height: 600px; /* Adjust the height as needed */
     object-fit: cover; 
   }
+      .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
   </style>
 </head>
@@ -164,7 +172,7 @@
 
     <!-- Slideshow of the equipment available in the gym -->
     <!-- Slideshow of the equipment available in the gym -->
-    <div class="slideshow-container-about-slideshow">
+    <div class="slideshow-container">
       <div class="mySlides fade">
         <%= image_tag 'barbell-h.jpg', alt: 'barbells', class: 'standard-image-size' %>
       </div>
@@ -221,6 +229,23 @@
         <%= image_tag 'upstairs-free-space-h.jpg', alt: 'upstairs free space', class: 'standard-image-size' %>
       </div>
     </div>
+
+      <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      </div>
   </div>
 
 
@@ -295,7 +320,5 @@
     setTimeout(showSlides, 2000); // Change image every 2 seconds (adjust as needed)
   }
 </script>
-
-
 </body>
 </html>
