@@ -1,0 +1,2 @@
+class LikedExercise < ApplicationRecord
+end
