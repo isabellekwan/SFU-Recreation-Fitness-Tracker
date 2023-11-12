@@ -175,3 +175,39 @@ tr:last-of-type td:first-of-type {
 tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 20px;
 }
+
+section.equipment {
+    background-color: white;
+    border-radius: 1vw;
+    padding: 2vw;
+    width: 90%;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1.equipment {
+    color:black;
+}
+
+ul.equipment {
+    list-style-position: inside;
+}
+
+li.equipment {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 1.3vw;
+}
+
+section.hoverlist {
+    display: none;
+}
+
+li.equipment:hover section.hoverlist {
+    display: block;
+}
+
+section.hoverlist p {
+    color:black;
+}
