@@ -21,7 +21,7 @@
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
           <% if logged_in? %>
-            <%= link_to 'Exercises', workoutslike_path %>
+            <%= link_to 'Exercises', exercise_path %>
           <% else %>
             <%= link_to 'Exercises', exercises_path %>
           <% end %>

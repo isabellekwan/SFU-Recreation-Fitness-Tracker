@@ -67,12 +67,7 @@ body {
     padding: 50px;
   }
   
-  .about h1,
-  .about p,
-  h3 em,
-  h1 {
-    color: white;
-  }
+
   
   .about-slideshow {
     max-width: 1000px;

@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SFU Fitness App</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "navbar.css" %>
+
+</head>
 <body>
  <div class="navbar">
     <div class="navbar-group">
@@ -33,8 +42,8 @@
     <%= image_tag "sfu-rec.png", class: "login_logo" %>
     <h2 class="login">Log In</h2>
     <%= form_tag '/login' do %>
-        Username: <%= text_field_tag :username %><br><br>
-        Password: <%= password_field_tag :password %><br><br>
+        <p class='form'>Username:</p> <%= text_field_tag :username %><br>
+        <p class='form'>Password:</p> <%= password_field_tag :password %><br><br>
         <%= submit_tag "Log In" %>
     <% end %>
     <br>

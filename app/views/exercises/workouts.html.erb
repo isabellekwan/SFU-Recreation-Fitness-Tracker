@@ -6,6 +6,9 @@
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
   <style>
+    .box {
+      color: black;
+    }
     .grid-container {
       display: grid;
       column-gap: 10px;
@@ -94,7 +97,7 @@
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
           <% if logged_in? %>
-            <%= link_to 'Exercises', workoutslike_path %>
+            <%= link_to 'Exercises', exercise_path %>
           <% else %>
             <%= link_to 'Exercises', exercises_path %>
           <% end %>
@@ -135,13 +138,13 @@
     <% @exercises.each do |exercise| %>
       <div class="grid-item">
         <h2><%= exercise.name %></h2>
-        <p><strong>Category:</strong> <%= exercise.category %></p>
-        <p><strong>Targets:</strong> <%= exercise.targets %></p>
-        <p><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
+        <p class='box'><strong>Category:</strong> <%= exercise.category %></p>
+        <p class='box'><strong>Targets:</strong> <%= exercise.targets %></p>
+        <p class='box'><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
         <div class="item-content">
-          <p><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
         </div>
       </div>
     <% end %>
