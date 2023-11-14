@@ -58,7 +58,7 @@
     }
 
     .active {
-      background-color: #717171;
+      background-color: #FFFFFF;
     }
 
     /* Fading animation */
@@ -123,6 +123,14 @@
     height: 600px; /* Adjust the height as needed */
     object-fit: cover; 
   }
+      .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
   </style>
 </head>
@@ -168,7 +176,7 @@
 
     <!-- Slideshow of the equipment available in the gym -->
     <!-- Slideshow of the equipment available in the gym -->
-    <div class="slideshow-container-about-slideshow">
+    <div class="slideshow-container">
       <div class="mySlides fade">
         <%= image_tag 'barbell-h.jpg', alt: 'barbells', class: 'standard-image-size' %>
       </div>
@@ -225,6 +233,23 @@
         <%= image_tag 'upstairs-free-space-h.jpg', alt: 'upstairs free space', class: 'standard-image-size' %>
       </div>
     </div>
+
+      <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      </div>
   </div>
 
 
@@ -245,26 +270,34 @@
   <footer>
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    showSlides();
+<script>
+  let slideIndex = 0;
+  showSlides();
 
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 3200); // Change image every 3.2 seconds
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot"); // Make sure you have elements with the class "dot"
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
-  </script>
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    setTimeout(showSlides, 4000); // Change image every 2 seconds (adjust as needed)
+  }
+</script>
 </body>
 </html>
