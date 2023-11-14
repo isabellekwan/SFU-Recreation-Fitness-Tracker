@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/about',  to: 'static_pages#about'
   get '/exercises', to: 'exercises#workouts'
+  # when logged in
+  get '/exercise', to: 'sessions#workoutslike'
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
 
-  #for the logged in , "sessions view"
 
 end

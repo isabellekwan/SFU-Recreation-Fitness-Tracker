@@ -12,7 +12,11 @@
       <div class="dropdown">
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
+          <% if logged_in? %>
+            <%= link_to 'Exercises', exercise_path %>
+          <% else %>
+            <%= link_to 'Exercises', exercises_path %>
+          <% end %>
           <%= link_to 'Equipment', equipment_path %>
           <%= link_to 'Schedule', schedule_path %>
         </div>
