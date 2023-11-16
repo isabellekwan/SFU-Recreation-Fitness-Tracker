@@ -142,18 +142,32 @@
 
     <h1>Where to find us</h1>
     <p>
-      The SFU Recreation Center is located on the west side of the campus near the Tim Horton's.
-      It is within the Lorne Davies Complex by the track field. 
+      The SFU Recreation Center is located in the Lorne Davies Complex by the Tim Horton's.
     </p>
-    <!-- Insert an image below here and perhaps a video -->
+    <p>
+      The following video shows how to get from the 
+      <a href="https://www.google.com/maps/dir/SFU+Transportation+Centre,+University+Drive+West,
+      +Burnaby,+BC/8888+University+Dr+W,+Burnaby,+BC+V5A+1S6/@49.2801479,-122.9229796,18z/data=!
+      3m1!5s0x548679eaba14b583:0x96fa9222394ef691!4m13!4m12!1m5!1m1!1s0x5486799559f9c575:0xc0b1
+      ab33be0210a6!2m2!1d-122.9201477!2d49.2797828!1m5!1m1!1s0x548679c001aa0309:0xca87e6c491b6ed
+      78!2m2!1d-122.9227306!2d49.2792845?entry=ttu">
+      Transportation Center</a> to the Recreation Center
+    </p>
+    <!-- video on how to get to fitness center from the transportation center -->
   <video width="680" height="480" controls>
     <source src="<%= asset_path('walk-to-the-gym.mp4') %>" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
+  <%= image_tag "map-to-fitness-center-from-TC.png" %>
+  
+
   </section>
 
   <footer>
   </footer>
+
+  <!-- function to make the slideshow component work -->
 
 <script>
   let slideIndex = 0;
