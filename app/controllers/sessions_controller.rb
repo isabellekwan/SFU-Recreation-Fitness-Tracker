@@ -11,11 +11,14 @@ class SessionsController < ApplicationController
             redirect_to login_path, notice: "Username or password is incorrect. Try again or sign up!"
         end
     end
+
     def logout
         session.delete(:user_id)
         redirect_to login_path, notice: "Logged out successfully!"
     end
+
     def workoutslike
         @exercises = Exercise.all
     end
+
 end

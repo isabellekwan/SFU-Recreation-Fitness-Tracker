@@ -35,6 +35,33 @@
   <div class="navbar-spacing"></div>
   <header>
   <h1>Profile</h1><br>
+
+  <div class="goals"> 
+    <%= form_with(model: @goal, url: goals_path) do |form| %>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+
+      <%= form.label :due_date %>
+      <%= form.date_field :due_date %>
+
+      <%= form.submit "Create Goal" %>
+    <% end %> <br>
+  </div>
+  <div class="goals">
+    <% if current_user.goals.any? %>
+      <h2>My Goals:</h2>
+      <ul>
+        <% current_user.goals.each do |goal| %>
+          <li>
+            <strong><%= goal.title %></strong> - <%= goal.due_date.strftime('%B %e, %Y') %>
+            <%= link_to 'Delete', goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No goals created yet.</p>
+    <% end %>
+    </div>
   <%= link_to "Logout", logout_path, method: :delete, class: "buttonnav" %>
 </body>
 </html>

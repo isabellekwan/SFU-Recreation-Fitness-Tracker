@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
 
-
+  resources :goals
 end
