@@ -27,13 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_235822) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "liked_exercises", force: :cascade do |t|
-    t.string "user_id"
-    t.string "exercise_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"

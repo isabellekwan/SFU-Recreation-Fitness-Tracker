@@ -34,7 +34,27 @@
   </div>
   <div class="navbar-spacing"></div>
   <header>
-  <h1>Profile</h1><br>
+  <h1 class="profile">Profile</h1><br>
+  <h2 class="profile">Liked Exercises:</h2>
+  <div class="grid-container">
+    <% if @liked_exercises.present? %>
+      <% @liked_exercises.each do |exercise| %>
+        <div class="grid-item">
+          <h2><%= exercise.name %></h2>
+          <p class='box'><strong>Category:</strong> <%= exercise.category %></p>
+          <p class='box box-targets'><strong>Targets:</strong> <%= exercise.targets %></p>
+          <p class='box'><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
+        <div class="item-content">
+          <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+        </div>
+      </div>
+    <% end %>
+    <% else %>
+      <p class="profile">No liked exercises found.</p>
+    <% end %>
+  </div>
   <%= link_to "Logout", logout_path, method: :delete, class: "buttonnav" %>
 </body>
 </html>

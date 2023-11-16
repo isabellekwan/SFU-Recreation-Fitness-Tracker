@@ -7,6 +7,7 @@ class Exercise < ApplicationRecord
     attribute :targets, :string
     attribute :equipment_needed, :string
     attribute :url, :string
+    has_many :liked_exercises #added for liking system
 
     def full_description
         "#{name}: #{description}"

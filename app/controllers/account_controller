@@ -1,0 +1,10 @@
+require 'exercise' # or require_relative 'exercise'
+require 'liked_exercises' # or require_relative 'liked_exercise'
+
+class AccountController < ApplicationController
+    def show
+      @user = current_user # Fetch the currently logged-in user
+      @liked_exercises = @user.liked_exercises.map(&:exercise) if @user.present?
+    end
+  
+  end

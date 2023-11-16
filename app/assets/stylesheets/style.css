@@ -48,6 +48,7 @@ p.home {
 section.about {
     color: black;
     padding: 2vw;
+    text-align: left;
 }
 
 h1 {
@@ -130,7 +131,9 @@ h2.login {
 }
 
 h1.schedule {
-    font-family:fantasy;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 10;
 }
 
@@ -199,7 +202,11 @@ section.equipment {
 }
 
 h1.equipment {
-    color:black;
+    color:white;
+    margin-left: 3.5vw;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
 }
 
 ul.equipment {
@@ -210,6 +217,34 @@ li.equipment {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-size: 1.3vw;
+}
+
+h1.exercises {
+    margin-left: 1vw;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+}
+
+h1.profile {
+    margin-left: 2vw;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+}
+
+h2.profile {
+    margin-left: 2vw;
+    margin-top: -1vw;
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+}
+
+p.profile {
+    margin-left: 2vw;
 }
 
 section.hoverlist {
@@ -232,4 +267,18 @@ section.hoverlist p {
 .treadmill{
     height: 28vw;
     width: 25vw;
+}
+
+.likebutton {
+    font-size: 1.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    text-decoration: none;
+    background-color: white;
+    color: rgb(117, 25, 25);
+}
+
+div.search-bar {
+    padding-left: 1vw;
 }

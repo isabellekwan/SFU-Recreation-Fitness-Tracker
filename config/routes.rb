@@ -25,5 +25,9 @@ Rails.application.routes.draw do
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
 
+  resources :exercises do
+    post 'like', to: 'liked_exercises#create', as: 'like'
+  delete 'unlike', to: 'liked_exercises#destroy', as: 'unlike'
+  end
 
 end
