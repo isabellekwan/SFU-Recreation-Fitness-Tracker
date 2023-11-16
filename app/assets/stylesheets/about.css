@@ -44,6 +44,8 @@ body {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 5s ease;
+    position: relative;
+    z-index: 1; /* Ensure dots are above images */
   }
   
   .active {
@@ -73,6 +75,8 @@ body {
   .about-slideshow {
     max-width: 1000px;
     margin: auto;
+    position: relative;
+    z-index: 0 ;
   }
   
   .about-slideshow img {
