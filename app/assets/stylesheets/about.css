@@ -3,6 +3,7 @@
 body {
     font-family: Verdana, sans-serif;
     color: white;
+    text-align: center;
   }
   
   .mySlides {
@@ -67,8 +68,6 @@ body {
     padding: 50px;
   }
   
-
-  
   .about-slideshow {
     max-width: 1000px;
     margin: auto;
@@ -96,5 +95,10 @@ body {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+  }
+
+  .map{
+    width: 680;
+    height: 480;
   }
   
