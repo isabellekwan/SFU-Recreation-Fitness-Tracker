@@ -77,6 +77,10 @@ body {
     width: 100%;
     height: auto;
   }
+
+  .about p {
+    text-align: center;
+  }
   
   .navbar-spacing {
     height: 50px; /* Adjust the height as needed */
