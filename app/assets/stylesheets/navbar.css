@@ -15,6 +15,7 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 100vw;
     height: 96px;
+    z-index: 1000;   /*higher z index means that it won't get blocked under smaller z-index ones*/
 }
 
 .navbar-spacing {
