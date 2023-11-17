@@ -56,9 +56,13 @@
     <ul id="goalList">
       <% current_user.goals.each do |goal| %>
         <li>
-          <strong><%= goal.title %></strong> - <%= goal.due_date.strftime('%B %e, %Y') %>
-          <%= form_with(model: goal, url: complete_goal_path(goal), method: :put) do |form| %>
-          <%= form.submit 'Completed', class: 'btn btn-success complete-goal-btn' %>
+          <strong><%= goal.title %></strong> - <%= goal.due_date.strftime('%B %e, %Y') if goal.due_date.present? %>
+          <% if goal.due_date.present? %>
+            <%= form_with(model: goal, url: complete_goal_path(goal), method: :put) do |form| %>
+              <%= form.submit 'Completed', class: 'btn btn-success complete-goal-btn' %>
+            <% end %>
+          <% else %>
+            <span class="invalid-date-msg">Invalid due date</span>
           <% end %>
           <%= form_with(model: goal, url: goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
             <%= form.submit 'Delete', class: 'delete-goal-btn' %>
