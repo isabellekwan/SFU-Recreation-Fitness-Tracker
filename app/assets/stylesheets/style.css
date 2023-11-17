@@ -233,3 +233,10 @@ section.hoverlist p {
     height: 28vw;
     width: 25vw;
 }
+
+div.goals {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}

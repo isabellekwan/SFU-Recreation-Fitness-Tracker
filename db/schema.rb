@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_11_235822) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_17_001120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_235822) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.string "title"
+    t.date "due_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "completed"
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "liked_exercises", force: :cascade do |t|
     t.string "user_id"
     t.string "exercise_name"
@@ -39,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_235822) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "complete_goals_count", default: 0
   end
 
+  add_foreign_key "goals", "users"
 end
