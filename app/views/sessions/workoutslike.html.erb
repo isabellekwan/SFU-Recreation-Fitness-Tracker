@@ -89,6 +89,9 @@
     <% @exercises.each do |exercise| %>
       <div class="grid-item">
         <h2><%= exercise.name %></h2>
+        <!-- Add a Favorite button -->
+      <%= button_to "Add to Profile", exercise_like_path(exercise), method: :post, remote: true, class: "likebutton" %>
+      <!-- End of Favorite button -->
         <p class='box'><strong>Category:</strong> <%= exercise.category %></p>
         <p class='box box-targets'><strong>Targets:</strong> <%= exercise.targets %></p>
         <p class='box'><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
