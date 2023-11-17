@@ -25,5 +25,11 @@ Rails.application.routes.draw do
   get '/equipment', to: 'exercises#equipment'
   get '/schedule', to: 'exercises#schedule'
 
-  resources :goals
+  resources :goals, only: [:new, :create, :destroy, :complete]
+
+  resources :goals do
+    member do
+      put 'complete' # You can use 'patch' instead of 'put' based on your Rails version
+    end
+  end
 end

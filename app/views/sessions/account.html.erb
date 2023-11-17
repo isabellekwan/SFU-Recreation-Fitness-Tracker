@@ -48,14 +48,17 @@
     <% end %> <br>
   </div>
   <div class="goals">
+    <p>Total Completed Goals: <%= current_user.complete_goals_count %></p>
     <% if current_user.goals.any? %>
       <h2>My Goals:</h2>
       <ul>
         <% current_user.goals.each do |goal| %>
           <li>
             <strong><%= goal.title %></strong> - <%= goal.due_date.strftime('%B %e, %Y') %>
-            <%= link_to 'Delete', goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </li>
+           <%= button_to 'Completed', complete_goal_path(goal), method: :put, data: { confirm: 'Mark this goal as completed?' }, class: 'complete-goal-btn' %>
+            <%= form_with(model: goal, url: goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+              <%= form.submit 'Delete', class: 'delete-goal-btn' %>
+            <% end %>
         <% end %>
       </ul>
     <% else %>

@@ -21,4 +21,8 @@ class SessionsController < ApplicationController
         @exercises = Exercise.all
     end
 
+    def account
+        @goal = Goal.new # Initialize a new instance of the Goal model
+      end
+
 end
