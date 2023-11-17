@@ -5,7 +5,46 @@
   <title>SFU Fitness App</title>
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
-
+  <style>
+    .grid-container {
+      display: grid;
+      column-gap: 10px;
+      row-gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      color: black;
+      cursor: pointer;
+    }
+    .item-content {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s;
+    }
+    .expanded {
+      height: auto;
+    }
+    p {
+    color: #0b0b0b;
+    font-size: 1.5vw;
+    text-align: left;
+    }
+    #muscleInput{
+      width: 20em;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border: 1px solid white;
+      height: 1.5em;
+      text-align: center;
+    }
+  
+    </style>
 </head>
 <body>
   <div class="navbar">
@@ -78,26 +117,63 @@
   <h2 class="profile">Liked Exercises:</h2>
 </div>
   <div class="grid-container">
-    <% if @liked_exercises.present? %>
-      <% @liked_exercises.each do |exercise| %>
-        <div class="grid-item">
-          <h2><%= exercise.name %></h2>
-          <p class='box'><strong>Category:</strong> <%= exercise.category %></p>
-          <p class='box box-targets'><strong>Targets:</strong> <%= exercise.targets %></p>
-          <p class='box'><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
-        <div class="item-content">
-          <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p class='box'><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-        </div>
-      </div>
+    <% if current_user.liked_exercises.includes(:exercise).any? %>
+      <% current_user.liked_exercises.includes(:exercise).each do |liked_exercises| %>
+        <div class="grid-item" data-exercise-id="<%= liked_exercises.id %>">
+          <h2><%= liked_exercises.exercise.name %></h2>
+          <%= button_to "Remove", "#", class: "remove-button likebutton", remote: true %>
+           <!-- Add a Favorite button -->
+          <!-- <%= form_with model: liked_exercises, url: exercise_unlike_path(liked_exercises), method: :delete, class: 'remove-form' do |form| %>
+            <%= form.submit "Remove", class: "likebutton", data: { confirm: 'Are you sure?' } %>
+          <% end %>  -->
+          <!-- End of Favorite button -->
+            <p class='box'><strong>Category:</strong> <%= liked_exercises.exercise.category %></p>
+            <p class='box box-targets'><strong>Targets:</strong> <%= liked_exercises.exercise.targets %></p>
+            <p class='box'><strong>Equipment Needed:</strong> <%= liked_exercises.exercise.equipment_needed %></p>
+            <div class="item-content">
+              <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(liked_exercises.exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+              <p class='box'><strong>Description:<br></strong> <%= strip_tags(liked_exercises.exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+              <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(liked_exercises.exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+            </div>
+          </div>
+
     <% end %>
     <% else %>
       <p class="profile">No liked exercises found.</p>
     <% end %>
   </div>
-
+  <div class="logout">
   <%= link_to "Logout", logout_path, method: :delete, class: "buttonnav" %>
+  </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(function (gridItem) {
+      gridItem.addEventListener("click", function () {
+        const itemContent = gridItem.querySelector(".item-content");
+        itemContent.classList.toggle("expanded");
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const removeButtons = document.querySelectorAll(".remove-button");
+
+  removeButtons.forEach(function(button) {
+    button.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the button's default behavior
+
+      const exerciseId = button.closest(".grid-item").dataset.exerciseId; // Get the exercise ID
+
+      // Find and hide the corresponding grid item
+      const gridItem = document.querySelector(`[data-exercise-id="${exerciseId}"]`);
+      if (gridItem) {
+        gridItem.style.display = "none"; // Hide the grid item
+      }
+    });
+  });
+});
+  </script>
 
 </body>
 

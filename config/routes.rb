@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   resources :exercises do
     post 'like', to: 'liked_exercises#create', as: 'like'
-  delete 'unlike', to: 'liked_exercises#destroy', as: 'unlike'
+    delete 'unlike', to: 'liked_exercises#destroy', as: 'unlike'
   end
 
 
