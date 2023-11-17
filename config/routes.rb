@@ -33,4 +33,11 @@ Rails.application.routes.draw do
       put 'complete' # You can use 'patch' instead of 'put' based on your Rails version
     end
   end
+
+  resources :exercises do
+    post 'like', to: 'liked_exercises#create', as: 'like'
+  delete 'unlike', to: 'liked_exercises#destroy', as: 'unlike'
+  end
+
+
 end
