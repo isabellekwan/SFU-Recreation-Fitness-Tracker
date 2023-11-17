@@ -49,9 +49,11 @@
   <p class="home">Tracking your fitness progress at SFU! All exercises and activities suggested <br> 
   can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
 </section>
+<div class="sign-up">
 <% if !logged_in? %>
-        <%= link_to 'Sign Up Now!', register_path, class: "button" %>
-      <% end %>
+    <%= link_to 'Sign Up Now!', register_path, class: "button buttonleft" %>
+<% end %>
+</div>
 
 </body>
 </html>

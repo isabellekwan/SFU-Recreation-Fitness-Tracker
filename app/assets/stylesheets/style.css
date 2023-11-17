@@ -102,6 +102,11 @@ p.form {
     color: rgb(117, 25, 25);
 }
 
+div.sign-up {
+    padding-left: 2w;
+    text-align: left;
+}
+
 h2.login {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(117, 25, 25);
