@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+
+
     def new
       @goal = current_user.goals.build
     end
@@ -38,4 +40,6 @@ class GoalsController < ApplicationController
     def goal_params
       params.require(:goal).permit(:title, :due_date)
     end
+
+
   end

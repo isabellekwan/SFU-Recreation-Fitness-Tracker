@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SFU Fitness App</title>
+  <title>About</title>
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
 </head>
 <body>
-  <div class="navbar">
-    <div class="navbar-group">
-      <div class="logo">
-        <%= image_tag "SFU_logo.png", class: "logo" %>
-        <p class="logo">Fitness App</p>
-      </div>
-    </div>
-    <div class="navbar-group">
-      <%= link_to 'Home', home_path, class: "nav" %>
-      <%= link_to 'About', about_path, class: "nav" %>
-      <div class="dropdown">
-        <button class="dropbtn">About</button>
-        <div class="dropdown-content">
-          <!-- Updated navigation links -->
-          <%= link_to 'Contact Us', contact_path %>
-        </div>
-      </div>
+<div class="navbar">
+  <div class="navbar-group">
+    <div class="logo">
+      <%= image_tag "SFU_logo.png", class: "logo" %>
+      <p class="logo">Fitness App</p>
     </div>
   </div>
-  <div class="navbar-spacing"></div>
-  <header>
-    <h1>Profile</h1><br>
-    <%= link_to "Logout", logout_path, method: :delete, class: "buttonnav" %>
-  </header>
-</body>
-</html>
+  <div class="navbar-group">
+    <%= link_to 'Home', root_path, class: "nav" %>
+    <%= link_to 'About', about_path, class: "nav" %>
+    <div class="dropdown">
+      <button class="dropbtn">Explore</button>
+      <div class="dropdown-content">
+        <% if logged_in? %>
+          <%= link_to 'Exercises', exercise_path %>
+        <% else %>
+          <%= link_to 'Exercises', exercises_path %>
+        <% end %>
+        <%= link_to 'Equipment', equipment_path %>
+        <%= link_to 'Schedule', schedule_path %>
+      </div>
+    </div>
+    <%= link_to 'Contact Us', contact_path, class: "nav" %>
+    <% if logged_in? %>
+      <%= link_to "Account", account_path, class: "buttonnav" %>
+    <% else %>
+      <%= link_to "Login", login_path, class: "buttonnav" %>
+    <% end %>
+  </div>
+</div>
+<div class="navbar-spacing"></div>
+<h1 class="equipment">Contact Us</h1>

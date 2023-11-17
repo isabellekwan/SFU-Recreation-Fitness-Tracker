@@ -29,6 +29,7 @@
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
+      <%= link_to 'Contact Us', contact_path, class: "nav" %>
       <% if logged_in? %>
         <%= link_to "Account", account_path, class: "buttonnav" %>
       <% else %>
