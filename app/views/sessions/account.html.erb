@@ -12,7 +12,12 @@
       row-gap: 10px;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       padding: 10px;
+      color:black;
     }
+    .no-exercises {
+      color:white;
+      }
+
     .grid-item {
       background-color: rgba(255, 255, 255, 0.8);
       border: 2px solid rgba(0, 0, 0, 0.8);
@@ -139,7 +144,7 @@
 
     <% end %>
     <% else %>
-      <p class="profile">No liked exercises found.</p>
+      <p class="no-exercises">No liked exercises found.</p>
     <% end %>
   </div>
   <div class="logout">
