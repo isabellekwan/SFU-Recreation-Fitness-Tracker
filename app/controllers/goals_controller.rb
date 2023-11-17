@@ -26,7 +26,8 @@ class GoalsController < ApplicationController
         @goal = Goal.find(params[:id])
         if @goal.update(completed: true)
           current_user.increment_completed_goals_count
-          redirect_to account_path, notice: 'Goal marked as completed'
+          @goal.destroy
+          redirect_to account_path, notice: 'Goal marked as completed and deleted from the list'
         else
           redirect_to account_path, alert: 'Failed to mark goal as completed'
         end
