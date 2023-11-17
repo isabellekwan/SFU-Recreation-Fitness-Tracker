@@ -48,6 +48,7 @@ p.home {
 section.about {
     color: black;
     padding: 2vw;
+    text-align: left;
 }
 
 h1 {
@@ -130,7 +131,9 @@ h2.login {
 }
 
 h1.schedule {
-    font-family:fantasy;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 10;
 }
 
@@ -196,10 +199,16 @@ section.equipment {
     margin-top: 2vw;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 }
 
 h1.equipment {
-    color:black;
+    color:white;
+    margin-left: 3.5vw;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    text-align: left;
 }
 
 ul.equipment {
@@ -210,6 +219,35 @@ li.equipment {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-size: 1.3vw;
+}
+
+h1.exercises {
+    margin-left: 1vw;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 2.25vw;
+}
+
+h1.profile {
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 3vw;
+}
+
+h2.profile {
+    margin-top: -1vw;
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 2.25vw;
+}
+
+p.profile {
+    margin-left: 2vw;
 }
 
 section.hoverlist {
@@ -234,9 +272,24 @@ section.hoverlist p {
     width: 25vw;
 }
 
+.likebutton {
+    font-size: 1.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    text-decoration: none;
+    background-color: white;
+    color: rgb(117, 25, 25);
+}
+
+div.search-bar {
+    padding-left: 1vw;
+}
+
 div.goals {
     padding-top: 1vw;
     padding-bottom: 1vw;
     padding-left: 2vw;
     padding-right: 2vw;
+    text-align: left;
 }

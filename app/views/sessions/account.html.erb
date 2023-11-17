@@ -34,11 +34,12 @@
   </div>
   <div class="navbar-spacing"></div>
   <header>
-  <h1>Profile</h1><br>
 
   <div class="goals"> 
+    <h1 class="profile">Profile</h1>
+    <h2 class="profile">Goals</h2>
     <%= form_with(model: @goal, url: goals_path) do |form| %>
-      <%= form.label :title %>
+      <%= form.label :new_goal %>
       <%= form.text_field :title %>
 
       <%= form.label :complete_by %>
