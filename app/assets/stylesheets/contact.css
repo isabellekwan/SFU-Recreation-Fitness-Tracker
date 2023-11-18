@@ -1,0 +1,19 @@
+th {
+    background-color: #a6192e;
+    padding: 2vw;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.3vw;
+}
+
+td {
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+    padding: 2vw;
+    color: black;
+}
+
+.p {
+    text-align: center;
+}

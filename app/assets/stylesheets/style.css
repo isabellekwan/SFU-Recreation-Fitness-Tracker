@@ -46,7 +46,9 @@ p.home {
 }
 
 section.about {
+    color: black;
     padding: 2vw;
+    text-align: left;
 }
 
 h1 {
@@ -60,6 +62,16 @@ p {
     font-size: 1.5vw;
     text-align: left;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p.form {
+    color: black;
+    text-align: center;
+}
+
+.pform {
+    color: black;
+    text-align: center;
 }
 
 #circle {
@@ -88,6 +100,11 @@ p {
     text-decoration: none;
     background-color: white;
     color: rgb(117, 25, 25);
+}
+
+div.sign-up {
+    padding-left: 2w;
+    text-align: left;
 }
 
 h2.login {
@@ -119,11 +136,14 @@ h2.login {
 }
 
 h1.schedule {
-    font-family:fantasy;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 10;
 }
 
 p.schedule {
+    color: white;
     margin-top: -1vw;
     font-size: 1.1vw;
 }
@@ -174,4 +194,123 @@ tr:last-of-type td:first-of-type {
 }
 tr:last-of-type td:last-of-type {
     border-bottom-right-radius: 20px;
+}
+
+section.equipment {
+    background-color: white;
+    border-radius: 1vw;
+    padding: 2vw;
+    width: 90%;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+h1.equipment {
+    color:white;
+    margin-left: 3.5vw;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    text-align: left;
+}
+
+ul.equipment {
+    list-style-position: inside;
+}
+
+li.equipment {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 1.3vw;
+}
+
+h1.exercises {
+    margin-left: 1vw;
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 2.25vw;
+}
+
+h1.profile {
+    color:white;
+    margin-top: 2vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 3vw;
+}
+
+h2.profile {
+    margin-top: -1vw;
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    font-size: 2.25vw;
+}
+
+p.profile {
+    margin-left: 2vw;
+}
+
+section.hoverlist {
+    display: none;
+}
+
+li.equipment:hover section.hoverlist {
+    display: block;
+}
+
+section.hoverlist p {
+    color:black;
+}
+
+.images{
+    width: 28vw;
+    height: 20vw;
+}
+
+.treadmill{
+    height: 28vw;
+    width: 25vw;
+}
+
+.likebutton {
+    font-size: 1.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    text-decoration: none;
+    background-color: white;
+    color: rgb(117, 25, 25);
+}
+
+div.search-bar {
+    padding-left: 1vw;
+}
+
+div.goals {
+    color: white;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    text-align: left;
+}
+
+div.goals p {
+    color: white;
+}
+
+div.liked {
+    text-align: left;
+    padding-left: 2vw;
+}
+
+div.logout {
+    text-align: left;
+    padding-left: 2vw;
+    margin: 2vw;
 }

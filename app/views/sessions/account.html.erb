@@ -5,7 +5,52 @@
   <title>SFU Fitness App</title>
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
+  <style>
+    .grid-container {
+      display: grid;
+      column-gap: 10px;
+      row-gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      padding: 10px;
+      color:black;
+    }
+    .no-exercises {
+      color:white;
+      padding-left: 2vw;
+      }
 
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      color: black;
+      cursor: pointer;
+    }
+    .item-content {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s;
+    }
+    .expanded {
+      height: auto;
+    }
+    p {
+    color: #0b0b0b;
+    font-size: 1.5vw;
+    text-align: left;
+    }
+    #muscleInput{
+      width: 20em;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border: 1px solid white;
+      height: 1.5em;
+      text-align: center;
+    }
+  
+    </style>
 </head>
 <body>
   <div class="navbar">
@@ -21,15 +66,119 @@
       <div class="dropdown">
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
+          <% if logged_in? %>
+            <%= link_to 'Exercises', exercise_path %>
+          <% else %>
+            <%= link_to 'Exercises', exercises_path %>
+          <% end %>
           <%= link_to 'Equipment', equipment_path %>
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
+      <%= link_to 'Contact Us', contact_path, class: "nav" %>
     </div>
   </div>
   <div class="navbar-spacing"></div>
   <header>
-  <pre>Profile<br>
+
+  <div class="goals"> 
+    <h1 class="profile">Profile</h1>
+    <h2 class="profile">Goals</h2>
+    <%= form_with(model: @goal, url: goals_path) do |form| %>
+      <%= form.label :new_goal %>
+      <%= form.text_field :title %>
+
+      <%= form.label :complete_by %>
+      <%= form.date_field :due_date %>
+
+      <%= form.submit "Create Goal" %>
+    <% end %> <br>
+  </div>
+  <div class="goals">
+  <p>Total Completed Goals: <%= current_user.complete_goals_count %></p>
+  <% if current_user.goals.any? %>
+    <h2>My Goals:</h2>
+    <ul id="goalList">
+      <% current_user.goals.each do |goal| %>
+        <li>
+          <strong><%= goal.title %></strong> - <%= goal.due_date.strftime('%B %e, %Y') if goal.due_date.present? %>
+          <% if goal.due_date.present? %>
+            <%= form_with(model: goal, url: complete_goal_path(goal), method: :put) do |form| %>
+              <%= form.submit 'Completed', class: 'btn btn-success complete-goal-btn' %>
+            <% end %>
+          <% else %>
+            <span class="invalid-date-msg">Invalid due date</span>
+          <% end %>
+          <%= form_with(model: goal, url: goal_path(goal), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+            <%= form.submit 'Delete', class: 'delete-goal-btn' %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No goals created yet.</p>
+  <% end %>
+</div>
+<div class="liked">
+  <h2 class="profile">Liked Exercises:</h2>
+</div>
+  <div class="grid-container">
+    <% if current_user.liked_exercises.includes(:exercise).any? %>
+      <% current_user.liked_exercises.includes(:exercise).each do |liked_exercises| %>
+        <!--<div class="grid-item" data-exercise-id="<%= liked_exercises.id %>"> -->
+          <div class="grid-item">
+          <h2><%= liked_exercises.exercise.name %></h2>
+          <!-- <%= button_to "Remove", "#", class: "remove-button likebutton", remote: true %>  -->
+           <!-- Delete Exercise Button -->
+           <%= button_to "Remove", exercise_unlike_path(liked_exercises), method: :delete, remote: true, class: "likebutton" %>
+          <!-- End of Button -->
+            <p class='box'><strong>Category:</strong> <%= liked_exercises.exercise.category %></p>
+            <p class='box box-targets'><strong>Targets:</strong> <%= liked_exercises.exercise.targets %></p>
+            <p class='box'><strong>Equipment Needed:</strong> <%= liked_exercises.exercise.equipment_needed %></p>
+            <div class="item-content">
+              <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(liked_exercises.exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+              <p class='box'><strong>Description:<br></strong> <%= strip_tags(liked_exercises.exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+              <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(liked_exercises.exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+            </div>
+          </div>
+    <% end %>
+    <% else %>
+      <p class="no-exercises">No liked exercises found.</p>
+    <% end %>
+  </div>
+  <div class="logout">
+  <%= link_to "Logout", logout_path, method: :delete, class: "buttonnav" %>
+  </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(function (gridItem) {
+      gridItem.addEventListener("click", function () {
+        const itemContent = gridItem.querySelector(".item-content");
+        itemContent.classList.toggle("expanded");
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const removeButtons = document.querySelectorAll(".remove-button");
+
+  removeButtons.forEach(function(button) {
+    button.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the button's default behavior
+
+      const exerciseId = button.closest(".grid-item").dataset.exerciseId; // Get the exercise ID
+
+      // Find and hide the corresponding grid item
+      const gridItem = document.querySelector(`[data-exercise-id="${exerciseId}"]`);
+      if (gridItem) {
+        gridItem.style.display = "none"; // Hide the grid item
+      }
+    });
+  });
+});
+  </script>
+
 </body>
+
 </html>

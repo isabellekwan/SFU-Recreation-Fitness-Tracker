@@ -6,6 +6,9 @@
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
   <style>
+    .box {
+      color: black;
+    }
     .grid-container {
       display: grid;
       column-gap: 10px;
@@ -35,8 +38,18 @@
     font-size: 1.5vw;
     text-align: left;
     }
+
+    #muscleInput{
+      width: 20em;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border: 1px solid white;
+      height: 1.5em;
+      text-align: center;
+    }
+    
   
-    </style>
+  </style>
 </head>
 <body>
   <div class="navbar">
@@ -47,43 +60,54 @@
       </div>
     </div>
     <div class="navbar-group">
-      <%= link_to 'Home', home_path, class: "nav" %>
+      <%= link_to 'Home', root_path, class: "nav" %>
       <%= link_to 'About', about_path, class: "nav" %>
       <div class="dropdown">
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
+          <% if logged_in? %>
+            <%= link_to 'Exercises', exercise_path %>
+          <% else %>
+            <%= link_to 'Exercises', exercises_path %>
+          <% end %>
           <%= link_to 'Equipment', equipment_path %>
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
-      <%= link_to 'Login', login_path, class: "buttonnav" %>
+      <%= link_to 'Contact Us', contact_path, class: "nav" %>
+      <% if logged_in? %>
+        <%= link_to "Account", account_path, class: "buttonnav" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "buttonnav" %>
+      <% end %>
     </div>
   </div>
   <div class="navbar-spacing"></div>
 <section class="about">
 
-  <h1>Exercises</h1>
-  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
-  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
+  <h1 class="exercises">Exercises</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Search Muscles.." id="muscleInput" onkeyup="filterMuscles()">
+  </div>
 
   <div class="grid-container">
     <% @exercises.each do |exercise| %>
       <div class="grid-item">
         <h2><%= exercise.name %></h2>
-        <p><strong>Category:</strong> <%= exercise.category %></p>
-        <p><strong>Targets:</strong> <%= exercise.targets %></p>
-        <p><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
+        <p class='box'><strong>Category:</strong> <%= exercise.category %></p>
+        <p class='box box-targets'><strong>Targets:</strong> <%= exercise.targets %></p>
+        <p class='box'><strong>Equipment Needed:</strong> <%= exercise.equipment_needed %></p>
         <div class="item-content">
-          <p><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
-          <p><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Set Up:<br></strong> <%= strip_tags(exercise.set_up).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Description:<br></strong> <%= strip_tags(exercise.description).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
+          <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
         </div>
       </div>
     <% end %>
   </div>
 </section>
 </footer>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const gridItems = document.querySelectorAll(".grid-item");
@@ -94,6 +118,20 @@
       });
     });
   });
+
+function filterMuscles() {
+  const gridItems = document.querySelectorAll(".grid-item");
+  const input = document.getElementById("muscleInput").value.toUpperCase();
+
+  gridItems.forEach(function (gridItem) {
+    const targetsElement = gridItem.querySelector('.box-targets');
+    const targetsText = targetsElement ? targetsElement.textContent.toUpperCase() : '';
+    const isVisible = targetsText.includes(input);
+
+    gridItem.style.display = isVisible ? "grid" : "none";
+  });
+}
+
 </script>
 </body>
 </html>

@@ -30,7 +30,7 @@ Exercise.create(
     - A higher surface decreases the difficulty, while a lower surface increases the difficulty.",
 
     category: "Strength",
-    targets: "Triceps, Pectoral Muscles, Shoulders",
+    targets: "Triceps, Chest (Pectoral Muscles), Shoulders",
     equipment_needed: "A stable surface or object that is elevated and can support your bodyweight.",
     url: "",
 )
@@ -137,7 +137,7 @@ Exercise.create(
 
 # Advanced Squats
 Exercise.create(
-    name: "Bulgarian Split Squats",
+    name: "Split Squats",
     set_up: 
     "1. Stand a couple of feet in front of a bench or a sturdy platform. You can hold dumbbells in each hand for added resistance.\n
     2. Extend one leg behind you and place the top of your foot on the bench or platform, so your toes are pointing down. The other foot should be a few feet in front of you, creating a split stance.\n

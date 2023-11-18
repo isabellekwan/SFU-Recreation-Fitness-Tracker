@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SFU Fitness App</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "navbar.css" %>
+
+</head>
 <body>
  <div class="navbar">
     <div class="navbar-group">
@@ -12,7 +21,11 @@
       <div class="dropdown">
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
+          <% if logged_in? %>
+            <%= link_to 'Exercises', exercise_path %>
+          <% else %>
+            <%= link_to 'Exercises', exercises_path %>
+          <% end %>
           <%= link_to 'Equipment', equipment_path %>
           <%= link_to 'Schedule', schedule_path %>
         </div>
@@ -22,12 +35,14 @@
   <div class="navbar-spacing"></div>
   <div class="loginblock">
     <%= image_tag "sfu-rec.png", class: "login_logo" %>
-    <h2 class="login">WORKING Register</h2>
+    <h2 class="login">Register</h2>
     <%= form_for @user do |f| %>
-        <%= f.label :username %>
+        <%= f.label :username, class:'pform' %>
         <%= f.text_field :username %><br>
-        <%= f.label :password %>
+        <br>
+        <%= f.label :password, class:'pform' %>
         <%= f.password_field :password %><br>
+        <br>
         <%= f.submit "Register" %>
     <% end %>
     <br>

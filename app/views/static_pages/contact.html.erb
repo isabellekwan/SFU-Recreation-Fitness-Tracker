@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "navbar.css" %>
+  <%= stylesheet_link_tag "contact.css" %>
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-group">
+    <div class="logo">
+      <%= image_tag "SFU_logo.png", class: "logo" %>
+      <p class="logo">Fitness App</p>
+    </div>
+  </div>
+  <div class="navbar-group">
+    <%= link_to 'Home', root_path, class: "nav" %>
+    <%= link_to 'About', about_path, class: "nav" %>
+    <div class="dropdown">
+      <button class="dropbtn">Explore</button>
+      <div class="dropdown-content">
+        <% if logged_in? %>
+          <%= link_to 'Exercises', exercise_path %>
+        <% else %>
+          <%= link_to 'Exercises', exercises_path %>
+        <% end %>
+        <%= link_to 'Equipment', equipment_path %>
+        <%= link_to 'Schedule', schedule_path %>
+      </div>
+    </div>
+    <%= link_to 'Contact Us', contact_path, class: "nav" %>
+    <% if logged_in? %>
+      <%= link_to "Account", account_path, class: "buttonnav" %>
+    <% else %>
+      <%= link_to "Login", login_path, class: "buttonnav" %>
+    <% end %>
+  </div>
+</div>
+<div class="navbar-spacing"></div>
+<h1 class="equipment">Contact Us</h1>
+
+
+  <table style="width:85%;height:80%">
+    <tr>
+      <th>Contact Information</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Email Address: rec@sfu.ca </td>
+      <td>Phone Number: 778-782-4950 </td>
+    </tr>
+  </table>
+
+  <h1>Interested in Personal Training?</h1>
+
+  <p style="text-align: center;">Click <a href="https://sfurec.ca/sports/2021/4/27/personal-training.aspx">here</a> 
+  for further information</p>
+
+</body>
+</html>

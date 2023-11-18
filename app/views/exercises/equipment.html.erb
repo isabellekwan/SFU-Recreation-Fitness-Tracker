@@ -7,33 +7,111 @@
   <%= stylesheet_link_tag "navbar.css" %>
 </head>
 <body>
-    <div class="navbar">
-    <div class="navbar-group">
-      <div class="logo">
-        <%= image_tag "SFU_logo.png", class: "logo" %>
-        <p class="logo">Fitness App</p>
-      </div>
-    </div>
-    <div class="navbar-group">
-      <%= link_to 'Home', home_path, class: "nav" %>
-      <%= link_to 'About', about_path, class: "nav" %>
-      <div class="dropdown">
-        <button class="dropbtn">Explore</button>
-        <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
-          <%= link_to 'Equipment', equipment_path %>
-          <%= link_to 'Schedule', schedule_path %>
-        </div>
-      </div>
-      <%= link_to 'Login', login_path, class: "buttonnav" %>
+<div class="navbar">
+  <div class="navbar-group">
+    <div class="logo">
+      <%= image_tag "SFU_logo.png", class: "logo" %>
+      <p class="logo">Fitness App</p>
     </div>
   </div>
-  <div class="navbar-spacing"></div>
-<section class="about">
-  <h1>Equipment</h1>
-  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
-  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
+  <div class="navbar-group">
+    <%= link_to 'Home', root_path, class: "nav" %>
+    <%= link_to 'About', about_path, class: "nav" %>
+    <div class="dropdown">
+      <button class="dropbtn">Explore</button>
+      <div class="dropdown-content">
+        <% if logged_in? %>
+          <%= link_to 'Exercises', exercise_path %>
+        <% else %>
+          <%= link_to 'Exercises', exercises_path %>
+        <% end %>
+        <%= link_to 'Equipment', equipment_path %>
+        <%= link_to 'Schedule', schedule_path %>
+      </div>
+    </div>
+    <%= link_to 'Contact Us', contact_path, class: "nav" %>
+      <% if logged_in? %>
+        <%= link_to "Account", account_path, class: "buttonnav" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "buttonnav" %>
+      <% end %>
+  </div>
+</div>
+<div class="navbar-spacing"></div>
+<h1 class="equipment">Equipment (Hover to See More)</h1>
+<section class="equipment">
+  <ul class="equipment">
+    <li class="equipment">Multi-Level 12,000 Square Feet Facility
+      <section class="hoverlist">
+        <p>The SFU Fitness Centre is located on the bottom floor of the
+          Lorne Davies Complex (LDC) Building (Room 088). The LDC Building
+          can be found near the West Mall Complex and just before Residence
+          & Housing. There are access points from all levels. Directional
+          signage to the Fitness Centre is posted throughout the complex.
+        </p>
+        <%= image_tag "gym.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">6 Rowing Machines</a>
+      <section class="hoverlist">
+        <p>A rowing machine provides an excellent form of cardio that is both low-intensity and
+          high impact.
+        </p>
+        <%= image_tag "sitting-rows-h.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">12 Treadmills</a>
+      <section class="hoverlist">
+        <p>Treadmills are the most popular cardio machines. This is a straight forward
+          cardio excercise.
+        </p>
+        <%= image_tag "tread-mill-v.jpg", class: "treadmill"%>
+      </section>
+    </li>
+    <li class="equipment">12 Ellipticals and 2 AMTs</a>
+      <section class="hoverlist">
+        <p>Ellipticals and AMTs are good low impact forms of cardio that
+          do not cause excessive joint pressure.
+        </p>
+        <%= image_tag "jog-machine-h.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">6 Squat Racks</a>
+      <section class="hoverlist">
+        <p>A squat rack provides a mechanical spotter and helps you
+          lift heavy and train safely.
+        </p>
+        <%= image_tag "smith-machine-h.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">3 Deadlift Platforms</a>
+      <section class="hoverlist">
+        <p>A deadlift platform will help protect the floors from
+          damage, and provides you with a flat surface to lift on.
+        </p>
+      </section>
+    </li>
+    <li class="equipment">Free Weights and Benches</a>
+      <section class="hoverlist">
+        <p>Free weights and benches can be used in many different
+          exercises and are a staple of a good workout.
+        </p>
+        <%= image_tag "free-weights-h.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">Stretching Areas</a>
+      <section class="hoverlist">
+        <p>You can take a yoga mat and use it to stretch in these areas as well.
+        </p>
+        <%= image_tag "upstairs-free-space-h.jpg", class: "images"%>
+      </section>
+    </li>
+    <li class="equipment">Accessible Entrance</a>
+      <section class="hoverlist">
+        <%= image_tag "gym.jpg", class: "images"%>
+      </section>
+    </li>
+  </ul>
 </section>
-</footer>
 </body>
 </html>

@@ -5,6 +5,16 @@
   <title>About</title>
   <%= stylesheet_link_tag "style.css" %>
   <%= stylesheet_link_tag "navbar.css" %>
+  <%= stylesheet_link_tag "about.css" %>
+<%
+=begin%>
+ 
+  <style>
+    placed all the previous css to about.css
+
+  </style> 
+<%
+=end%>
 </head>
 <body>
   <div class="navbar">
@@ -20,20 +30,182 @@
       <div class="dropdown">
         <button class="dropbtn">Explore</button>
         <div class="dropdown-content">
-          <%= link_to 'Exercises', exercises_path %>
+          <% if logged_in? %>
+            <%= link_to 'Exercises', exercise_path %>
+          <% else %>
+            <%= link_to 'Exercises', exercises_path %>
+          <% end %>
           <%= link_to 'Equipment', equipment_path %>
           <%= link_to 'Schedule', schedule_path %>
         </div>
       </div>
-      <%= link_to 'Login', login_path, class: "buttonnav" %>
+      <%= link_to 'Contact Us', contact_path, class: "nav" %>
+      <% if logged_in? %>
+        <%= link_to "Account", account_path, class: "buttonnav" %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "buttonnav" %>
+      <% end %>
     </div>
   </div>
   <div class="navbar-spacing"></div>
-<section class="about">
-  <h1>About</h1>
-  <p>Tracking your fitness progress at SFU! All exercises and activities suggested 
-  can be completed at the SFU Recreation Centre on SFU's Burnaby Campus</p>
-</section>
-</footer>
+
+  <section class="abouta">
+    <h1>About</h1>
+    <p>
+      Track your fitness progress at SFU! All exercises and activities suggested 
+      can be completed at the SFU Recreation Centre on SFU's Burnaby Campus.
+    </p>
+
+    <p> 
+      The exercises we have designed are inclusive to all. Perfect for beginners, 
+      those who want to strength train, and hard-core gym rats.
+    </p>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <%= image_tag 'barbell-h.jpg', alt: 'barbells', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'bench-and-weights-h.jpg', alt: 'bench and weight', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'benchpress-h.jpg', alt: 'benchpress', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'free-weights-2-h.jpg', alt: 'free weights', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'free-weights-and-mats-h.jpg', alt: 'free weights and mats section of gym', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'free-weights-h.jpg', alt: 'free weights', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'hanging-bar-h.jpg', alt: 'hanging bar', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'jog-machine-h.jpg', alt: 'jog machine', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'leg-extension-h.jpg', alt: 'leg extension', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'leg-press-h.jpg', alt: 'leg press', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'pull-up-h.jpg', alt: 'pull up', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'sitting-rows-h.jpg', alt: 'sitting rows', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'smith-machine-h.jpg', alt: 'smith machine', class: 'standard-image-size' %>
+      </div>
+
+      <div class="mySlides fade">
+        <%= image_tag 'upstairs-free-space-h.jpg', alt: 'upstairs free space', class: 'standard-image-size' %>
+      </div>
+      <br>
+    </div>
+
+      <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
+      <span class="dot" onclick="currentSlide(12)"></span>
+      <span class="dot" onclick="currentSlide(13)"></span>
+      <span class="dot" onclick="currentSlide(14)"></span>
+
+      </div>
+  </div>
+
+
+    <h3><em>Become the stronger version of yourself, TODAY!</em></h3>
+
+    <h1>Where to find us</h1>
+    <p>
+      The SFU Recreation Center is located in the Lorne Davies Complex by the Tim Horton's.
+    </p>
+    <p>
+      The following video shows how to get from the 
+      <a href="https://www.google.com/maps/dir/SFU+Transportation+Centre,+University+Drive+West,
+      +Burnaby,+BC/8888+University+Dr+W,+Burnaby,+BC+V5A+1S6/@49.2801479,-122.9229796,18z/data=!
+      3m1!5s0x548679eaba14b583:0x96fa9222394ef691!4m13!4m12!1m5!1m1!1s0x5486799559f9c575:0xc0b1
+      ab33be0210a6!2m2!1d-122.9201477!2d49.2797828!1m5!1m1!1s0x548679c001aa0309:0xca87e6c491b6ed
+      78!2m2!1d-122.9227306!2d49.2792845?entry=ttu">
+      Transportation Center</a> to the Recreation Center
+    </p>
+    <!-- video on how to get to fitness center from the transportation center -->
+  <video width="680" height="480" controls>
+    <source src="<%= asset_path('walk-to-the-gym.mp4') %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <%= image_tag "map-to-fitness-center-from-TC.png", class: "map" %>
+  
+
+  </section>
+
+  <footer>
+  </footer>
+
+  <!-- function to make the slideshow component work -->
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot"); // Make sure you have elements with the class "dot"
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    setTimeout(showSlides, 4000); // Change image every 2 seconds (adjust as needed)
+
+    // Function to set the current slide when a dot is clicked
+    function currentSlide(n) {
+      showSlides();
+      slideIndex = n;
+      clearTimeout();
+    }
+  }
+</script>
 </body>
 </html>
