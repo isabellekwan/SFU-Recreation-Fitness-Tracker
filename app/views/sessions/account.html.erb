@@ -125,14 +125,13 @@
   <div class="grid-container">
     <% if current_user.liked_exercises.includes(:exercise).any? %>
       <% current_user.liked_exercises.includes(:exercise).each do |liked_exercises| %>
-        <div class="grid-item" data-exercise-id="<%= liked_exercises.id %>">
+        <!--<div class="grid-item" data-exercise-id="<%= liked_exercises.id %>"> -->
+          <div class="grid-item">
           <h2><%= liked_exercises.exercise.name %></h2>
-          <%= button_to "Remove", "#", class: "remove-button likebutton", remote: true %>
-           <!-- Add a Favorite button -->
-          <!-- <%= form_with model: liked_exercises, url: exercise_unlike_path(liked_exercises), method: :delete, class: 'remove-form' do |form| %>
-            <%= form.submit "Remove", class: "likebutton", data: { confirm: 'Are you sure?' } %>
-          <% end %>  -->
-          <!-- End of Favorite button -->
+          <!-- <%= button_to "Remove", "#", class: "remove-button likebutton", remote: true %>  -->
+           <!-- Delete Exercise Button -->
+           <%= button_to "Remove", exercise_unlike_path(liked_exercises), method: :delete, remote: true, class: "likebutton" %>
+          <!-- End of Button -->
             <p class='box'><strong>Category:</strong> <%= liked_exercises.exercise.category %></p>
             <p class='box box-targets'><strong>Targets:</strong> <%= liked_exercises.exercise.targets %></p>
             <p class='box'><strong>Equipment Needed:</strong> <%= liked_exercises.exercise.equipment_needed %></p>
@@ -142,7 +141,6 @@
               <p class='box'><strong>Key Points:<br></strong> <%= strip_tags(liked_exercises.exercise.key_points).gsub(/(\r)?\n/, "<br/>").html_safe %></p>
             </div>
           </div>
-
     <% end %>
     <% else %>
       <p class="no-exercises">No liked exercises found.</p>
